@@ -1,0 +1,10 @@
+E:\project\qltdl\form\qltdl\qltdl\bin\Debug\qltdl.exe.config
+E:\project\qltdl\form\qltdl\qltdl\bin\Debug\qltdl.exe
+E:\project\qltdl\form\qltdl\qltdl\bin\Debug\qltdl.pdb
+E:\project\qltdl\form\qltdl\qltdl\obj\Debug\qltdl.csprojResolveAssemblyReference.cache
+E:\project\qltdl\form\qltdl\qltdl\obj\Debug\qltdl.Mainform.resources
+E:\project\qltdl\form\qltdl\qltdl\obj\Debug\qltdl.Properties.Resources.resources
+E:\project\qltdl\form\qltdl\qltdl\obj\Debug\qltdl.csproj.GenerateResource.Cache
+E:\project\qltdl\form\qltdl\qltdl\obj\Debug\qltdl.csproj.CoreCompileInputs.cache
+E:\project\qltdl\form\qltdl\qltdl\obj\Debug\qltdl.exe
+E:\project\qltdl\form\qltdl\qltdl\obj\Debug\qltdl.pdb
