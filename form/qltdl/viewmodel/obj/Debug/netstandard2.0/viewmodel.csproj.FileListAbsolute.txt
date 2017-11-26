@@ -1,0 +1,9 @@
+E:\project\qltdl\form\qltdl\viewmodel\bin\Debug\netstandard2.0\viewmodel.deps.json
+E:\project\qltdl\form\qltdl\viewmodel\bin\Debug\netstandard2.0\viewmodel.dll
+E:\project\qltdl\form\qltdl\viewmodel\bin\Debug\netstandard2.0\viewmodel.pdb
+E:\project\qltdl\form\qltdl\viewmodel\obj\Debug\netstandard2.0\viewmodel.csprojResolveAssemblyReference.cache
+E:\project\qltdl\form\qltdl\viewmodel\obj\Debug\netstandard2.0\viewmodel.csproj.CoreCompileInputs.cache
+E:\project\qltdl\form\qltdl\viewmodel\obj\Debug\netstandard2.0\viewmodel.AssemblyInfoInputs.cache
+E:\project\qltdl\form\qltdl\viewmodel\obj\Debug\netstandard2.0\viewmodel.AssemblyInfo.cs
+E:\project\qltdl\form\qltdl\viewmodel\obj\Debug\netstandard2.0\viewmodel.dll
+E:\project\qltdl\form\qltdl\viewmodel\obj\Debug\netstandard2.0\viewmodel.pdb

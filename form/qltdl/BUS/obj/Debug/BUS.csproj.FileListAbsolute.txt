@@ -1,0 +1,14 @@
+E:\project\qltdl\form\qltdl\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
+E:\project\qltdl\form\qltdl\BUS\bin\Debug\BUS.dll
+E:\project\qltdl\form\qltdl\BUS\bin\Debug\BUS.pdb
+E:\project\qltdl\form\qltdl\BUS\bin\Debug\DAO.dll
+E:\project\qltdl\form\qltdl\BUS\bin\Debug\DTO.dll
+E:\project\qltdl\form\qltdl\BUS\bin\Debug\EntityFramework.dll
+E:\project\qltdl\form\qltdl\BUS\bin\Debug\DAO.pdb
+E:\project\qltdl\form\qltdl\BUS\bin\Debug\DAO.dll.config
+E:\project\qltdl\form\qltdl\BUS\bin\Debug\DTO.pdb
+E:\project\qltdl\form\qltdl\BUS\bin\Debug\DTO.dll.config
+E:\project\qltdl\form\qltdl\BUS\bin\Debug\EntityFramework.xml
+E:\project\qltdl\form\qltdl\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+E:\project\qltdl\form\qltdl\BUS\obj\Debug\BUS.dll
+E:\project\qltdl\form\qltdl\BUS\obj\Debug\BUS.pdb

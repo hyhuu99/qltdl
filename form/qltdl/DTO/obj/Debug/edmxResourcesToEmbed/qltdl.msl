@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="QLTDLModelStoreContainer" CdmEntityContainer="QLTDLEntities">
+    <EntitySetMapping Name="CTNTQs">
+      <EntityTypeMapping TypeName="QLTDLModel.CTNTQ">
+        <MappingFragment StoreEntitySet="CTNTQ">
+          <ScalarProperty Name="TENGOI" ColumnName="TENGOI" />
+          <ScalarProperty Name="IDTT" ColumnName="IDTT" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CTTTs">
+      <EntityTypeMapping TypeName="QLTDLModel.CTTT">
+        <MappingFragment StoreEntitySet="CTTT">
+          <ScalarProperty Name="THANHTIEN" ColumnName="THANHTIEN" />
+          <ScalarProperty Name="NOIDUNG" ColumnName="NOIDUNG" />
+          <ScalarProperty Name="IDLOAI" ColumnName="IDLOAI" />
+          <ScalarProperty Name="IDDDL" ColumnName="IDDDL" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DOANDLs">
+      <EntityTypeMapping TypeName="QLTDLModel.DOANDL">
+        <MappingFragment StoreEntitySet="DOANDL">
+          <ScalarProperty Name="TONGKINHPHI" ColumnName="TONGKINHPHI" />
+          <ScalarProperty Name="NGAYKT" ColumnName="NGAYKT" />
+          <ScalarProperty Name="NGAYBD" ColumnName="NGAYBD" />
+          <ScalarProperty Name="TENGOI" ColumnName="TENGOI" />
+          <ScalarProperty Name="IDT" ColumnName="IDT" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GIATOURs">
+      <EntityTypeMapping TypeName="QLTDLModel.GIATOUR">
+        <MappingFragment StoreEntitySet="GIATOUR">
+          <ScalarProperty Name="NGAYKT" ColumnName="NGAYKT" />
+          <ScalarProperty Name="NGAYBD" ColumnName="NGAYBD" />
+          <ScalarProperty Name="GIATOUR1" ColumnName="GIATOUR" />
+          <ScalarProperty Name="IDT" ColumnName="IDT" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KHs">
+      <EntityTypeMapping TypeName="QLTDLModel.KH">
+        <MappingFragment StoreEntitySet="KH">
+          <ScalarProperty Name="QUOCTICH" ColumnName="QUOCTICH" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+          <ScalarProperty Name="GIOITINH" ColumnName="GIOITINH" />
+          <ScalarProperty Name="CMND" ColumnName="CMND" />
+          <ScalarProperty Name="TEN" ColumnName="TEN" />
+          <ScalarProperty Name="HOTL" ColumnName="HOTL" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOAITOURs">
+      <EntityTypeMapping TypeName="QLTDLModel.LOAITOUR">
+        <MappingFragment StoreEntitySet="LOAITOUR">
+          <ScalarProperty Name="TENLOAI" ColumnName="TENLOAI" />
+          <ScalarProperty Name="IDT" ColumnName="IDT" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOAITTs">
+      <EntityTypeMapping TypeName="QLTDLModel.LOAITT">
+        <MappingFragment StoreEntitySet="LOAITT">
+          <ScalarProperty Name="NOIDUNG" ColumnName="NOIDUNG" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NHANVIENs">
+      <EntityTypeMapping TypeName="QLTDLModel.NHANVIEN">
+        <MappingFragment StoreEntitySet="NHANVIEN">
+          <ScalarProperty Name="GIOITINH" ColumnName="GIOITINH" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="HOTL" ColumnName="HOTL" />
+          <ScalarProperty Name="TENNV" ColumnName="TENNV" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NOITHAMQUANs">
+      <EntityTypeMapping TypeName="QLTDLModel.NOITHAMQUAN">
+        <MappingFragment StoreEntitySet="NOITHAMQUAN">
+          <ScalarProperty Name="TENNUOC" ColumnName="TENNUOC" />
+          <ScalarProperty Name="TENGOI" ColumnName="TENGOI" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NVNVs">
+      <EntityTypeMapping TypeName="QLTDLModel.NVNV">
+        <MappingFragment StoreEntitySet="NVNV">
+          <ScalarProperty Name="NHIEMVU" ColumnName="NHIEMVU" />
+          <ScalarProperty Name="IDNV" ColumnName="IDNV" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NVTDs">
+      <EntityTypeMapping TypeName="QLTDLModel.NVTD">
+        <MappingFragment StoreEntitySet="NVTD">
+          <ScalarProperty Name="IDNV" ColumnName="IDNV" />
+          <ScalarProperty Name="IDNVU" ColumnName="IDNVU" />
+          <ScalarProperty Name="IDDDL" ColumnName="IDDDL" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TGTOURs">
+      <EntityTypeMapping TypeName="QLTDLModel.TGTOUR">
+        <MappingFragment StoreEntitySet="TGTOUR">
+          <ScalarProperty Name="NGAYXUAT" ColumnName="NGAYXUAT" />
+          <ScalarProperty Name="IDDDL" ColumnName="IDDDL" />
+          <ScalarProperty Name="IDKH" ColumnName="IDKH" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TOURs">
+      <EntityTypeMapping TypeName="QLTDLModel.TOUR">
+        <MappingFragment StoreEntitySet="TOUR">
+          <ScalarProperty Name="GIATOUR" ColumnName="GIATOUR" />
+          <ScalarProperty Name="DACDIEM" ColumnName="DACDIEM" />
+          <ScalarProperty Name="TENGOI" ColumnName="TENGOI" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TOURDDs">
+      <EntityTypeMapping TypeName="QLTDLModel.TOURDD">
+        <MappingFragment StoreEntitySet="TOURDD">
+          <ScalarProperty Name="IDDD" ColumnName="IDDD" />
+          <ScalarProperty Name="IDT" ColumnName="IDT" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
