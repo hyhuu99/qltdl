@@ -10,8 +10,8 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="IDTT" Type="nvarchar" MaxLength="4" Nullable="false" />
-          <Property Name="TENGOI" Type="nvarchar" MaxLength="255" />
+          <Property Name="IDTT" Type="int" Nullable="false" />
+          <Property Name="TENGOI" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="CTTT">
           <Key>
@@ -28,7 +28,7 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="IDT" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="IDT" Type="int" Nullable="false" />
           <Property Name="TENGOI" Type="nvarchar(max)" />
           <Property Name="NGAYBD" Type="datetime" />
           <Property Name="NGAYKT" Type="datetime" />
@@ -39,7 +39,7 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="IDT" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="IDT" Type="int" Nullable="false" />
           <Property Name="GIATOUR" Type="money" Nullable="false" />
           <Property Name="NGAYBD" Type="datetime" />
           <Property Name="NGAYKT" Type="datetime" />
@@ -62,7 +62,7 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="IDT" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="IDT" Type="int" Nullable="false" />
           <Property Name="TENLOAI" Type="nchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="LOAITT">
@@ -86,9 +86,9 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="nvarchar" MaxLength="4" Nullable="false" />
-          <Property Name="TENGOI" Type="nvarchar" MaxLength="255" />
-          <Property Name="TENNUOC" Type="nvarchar" MaxLength="255" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TENGOI" Type="nvarchar(max)" />
+          <Property Name="TENNUOC" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="NVNV">
           <Key>
@@ -107,6 +107,16 @@
           <Property Name="IDNVU" Type="int" Nullable="false" />
           <Property Name="IDNV" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
         <EntityType Name="TGTOUR">
           <Key>
             <PropertyRef Name="ID" />
@@ -120,17 +130,16 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="nvarchar" MaxLength="10" Nullable="false" />
-          <Property Name="TENGOI" Type="nvarchar" MaxLength="255" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TENGOI" Type="nvarchar(max)" />
           <Property Name="DACDIEM" Type="nvarchar(max)" />
-          <Property Name="GIATOUR" Type="money" />
         </EntityType>
         <EntityType Name="TOURDD">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="IDT" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="IDT" Type="int" Nullable="false" />
           <Property Name="IDDD" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK__CTNTQ__IDTT__29572725">
@@ -301,6 +310,7 @@
           <EntitySet Name="NOITHAMQUAN" EntityType="Self.NOITHAMQUAN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NVNV" EntityType="Self.NVNV" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NVTD" EntityType="Self.NVTD" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TGTOUR" EntityType="Self.TGTOUR" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TOUR" EntityType="Self.TOUR" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TOURDD" EntityType="Self.TOURDD" Schema="dbo" store:Type="Tables" />
@@ -373,6 +383,7 @@
           <EntitySet Name="NOITHAMQUANs" EntityType="QLTDLModel.NOITHAMQUAN" />
           <EntitySet Name="NVNVs" EntityType="QLTDLModel.NVNV" />
           <EntitySet Name="NVTDs" EntityType="QLTDLModel.NVTD" />
+          <EntitySet Name="sysdiagrams" EntityType="QLTDLModel.sysdiagram" />
           <EntitySet Name="TGTOURs" EntityType="QLTDLModel.TGTOUR" />
           <EntitySet Name="TOURs" EntityType="QLTDLModel.TOUR" />
           <EntitySet Name="TOURDDs" EntityType="QLTDLModel.TOURDD" />
@@ -434,8 +445,8 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IDTT" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
-          <Property Name="TENGOI" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IDTT" Type="Int32" Nullable="false" />
+          <Property Name="TENGOI" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="NOITHAMQUAN" Relationship="QLTDLModel.FK__CTNTQ__IDTT__29572725" FromRole="CTNTQ" ToRole="NOITHAMQUAN" />
           <NavigationProperty Name="TOURDDs" Relationship="QLTDLModel.FK__TOURDD__IDDD__2C3393D0" FromRole="CTNTQ" ToRole="TOURDD" />
         </EntityType>
@@ -456,7 +467,7 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IDT" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="IDT" Type="Int32" Nullable="false" />
           <Property Name="TENGOI" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="NGAYBD" Type="DateTime" Precision="3" />
           <Property Name="NGAYKT" Type="DateTime" Precision="3" />
@@ -470,7 +481,7 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IDT" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="IDT" Type="Int32" Nullable="false" />
           <Property Name="GIATOUR1" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
           <Property Name="NGAYBD" Type="DateTime" Precision="3" />
           <Property Name="NGAYKT" Type="DateTime" Precision="3" />
@@ -495,7 +506,7 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IDT" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="IDT" Type="Int32" Nullable="false" />
           <Property Name="TENLOAI" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="TOUR" Relationship="QLTDLModel.FK__LOAITOUR__IDT__2D27B809" FromRole="LOAITOUR" ToRole="TOUR" />
         </EntityType>
@@ -523,9 +534,9 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
-          <Property Name="TENGOI" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="TENNUOC" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TENGOI" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TENNUOC" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="CTNTQs" Relationship="QLTDLModel.FK__CTNTQ__IDTT__29572725" FromRole="NOITHAMQUAN" ToRole="CTNTQ" />
         </EntityType>
         <EntityType Name="NVNV">
@@ -550,6 +561,16 @@
           <NavigationProperty Name="NHANVIEN" Relationship="QLTDLModel.FK__NVTD__IDNV__31EC6D26" FromRole="NVTD" ToRole="NHANVIEN" />
           <NavigationProperty Name="NVNV" Relationship="QLTDLModel.FK__NVTD__IDNVU__30F848ED" FromRole="NVTD" ToRole="NVNV" />
         </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
         <EntityType Name="TGTOUR">
           <Key>
             <PropertyRef Name="ID" />
@@ -565,10 +586,9 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="TENGOI" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TENGOI" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="DACDIEM" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="GIATOUR" Type="Decimal" Precision="19" Scale="4" />
           <NavigationProperty Name="GIATOURs" Relationship="QLTDLModel.FK__GIATOUR__IDT__2B3F6F97" FromRole="TOUR" ToRole="GIATOUR" />
           <NavigationProperty Name="LOAITOURs" Relationship="QLTDLModel.FK__LOAITOUR__IDT__2D27B809" FromRole="TOUR" ToRole="LOAITOUR" />
           <NavigationProperty Name="TOURDDs" Relationship="QLTDLModel.FK__TOURDD__IDT__2A4B4B5E" FromRole="TOUR" ToRole="TOURDD" />
@@ -578,7 +598,7 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IDT" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="IDT" Type="Int32" Nullable="false" />
           <Property Name="IDDD" Type="Int32" Nullable="false" />
           <NavigationProperty Name="CTNTQ" Relationship="QLTDLModel.FK__TOURDD__IDDD__2C3393D0" FromRole="TOURDD" ToRole="CTNTQ" />
           <NavigationProperty Name="TOUR" Relationship="QLTDLModel.FK__TOURDD__IDT__2A4B4B5E" FromRole="TOURDD" ToRole="TOUR" />
@@ -739,7 +759,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -858,6 +878,17 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="QLTDLModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="TGTOURs">
             <EntityTypeMapping TypeName="QLTDLModel.TGTOUR">
               <MappingFragment StoreEntitySet="TGTOUR">
@@ -871,7 +902,6 @@
           <EntitySetMapping Name="TOURs">
             <EntityTypeMapping TypeName="QLTDLModel.TOUR">
               <MappingFragment StoreEntitySet="TOUR">
-                <ScalarProperty Name="GIATOUR" ColumnName="GIATOUR" />
                 <ScalarProperty Name="DACDIEM" ColumnName="DACDIEM" />
                 <ScalarProperty Name="TENGOI" ColumnName="TENGOI" />
                 <ScalarProperty Name="ID" ColumnName="ID" />

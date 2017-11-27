@@ -23,7 +23,7 @@ namespace DTO
         }
     
         public int ID { get; set; }
-        public string IDT { get; set; }
+        public int IDT { get; set; }
         public string TENGOI { get; set; }
         public Nullable<System.DateTime> NGAYBD { get; set; }
         public Nullable<System.DateTime> NGAYKT { get; set; }

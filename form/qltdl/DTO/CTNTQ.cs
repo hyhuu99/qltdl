@@ -21,7 +21,7 @@ namespace DTO
         }
     
         public int ID { get; set; }
-        public string IDTT { get; set; }
+        public int IDTT { get; set; }
         public string TENGOI { get; set; }
     
         public virtual NOITHAMQUAN NOITHAMQUAN { get; set; }

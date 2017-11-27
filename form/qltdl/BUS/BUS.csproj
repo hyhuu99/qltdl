@@ -41,8 +41,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CTNTQ_BUS.cs" />
+    <Compile Include="LOAITOUR_BUS .cs" />
     <Compile Include="NOITHAMQUAN_BUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="GIATOUR_BUS.cs" />
+    <Compile Include="TOURDD_BUS.cs" />
     <Compile Include="QLTOUR_BUS.cs" />
   </ItemGroup>
   <ItemGroup>

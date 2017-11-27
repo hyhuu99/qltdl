@@ -15,7 +15,7 @@ namespace DTO
     public partial class GIATOUR
     {
         public int ID { get; set; }
-        public string IDT { get; set; }
+        public int IDT { get; set; }
         public decimal GIATOUR1 { get; set; }
         public Nullable<System.DateTime> NGAYBD { get; set; }
         public Nullable<System.DateTime> NGAYKT { get; set; }

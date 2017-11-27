@@ -12,13 +12,12 @@ namespace DTO
     using System;
     using System.Collections.Generic;
     
-    public partial class TOURDD
+    public partial class sysdiagram
     {
-        public int ID { get; set; }
-        public int IDT { get; set; }
-        public int IDDD { get; set; }
-    
-        public virtual CTNTQ CTNTQ { get; set; }
-        public virtual TOUR TOUR { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

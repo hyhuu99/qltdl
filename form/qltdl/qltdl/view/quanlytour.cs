@@ -20,6 +20,7 @@ namespace qltdl.view
             
         }
         int rowindex = -1;
+        int dkxoa = 0;//1 xoa bảng tỉnh thành, 0 xóa bảng qlt
         private void qltbt1_Click(object sender, EventArgs e)
         {
             
@@ -52,19 +53,16 @@ namespace qltdl.view
         {
             try
             {
-                if(checktt(cbb3.Text)==0)
-                {
-                    MessageBox.Show("Địa điểm bị trùng", "Thông báo");
-                }
-                else 
-                    if(String.IsNullOrEmpty(cbb3.Text))
-                {
-                    MessageBox.Show("Chưa điền địa điểm", "Thông báo");
-                }
+                if (tb1.Text.Length < 2)
+                    MessageBox.Show("Chưa điền tên tour", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);                              
+                else if (tb3.Text.Length < 2)
+                    MessageBox.Show("Chưa điền giá tour", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);                            
                 else
                 {
-                    this.dtgtt.Rows.Add(cbb2.Text, cbb3.Text);
-                }              
+                    
+                    this.dtgt.Rows.Add(tb1.Text, tb2.Text, int.Parse(tb3.Text), tb4.Text, dp1.Text, dp2.Text);
+                }
+                
                 //this.dtgtt.DataSource = null;
                 //this.dtgtt.Rows.Clear();
                 //this.dtgtt.Refresh();
@@ -88,9 +86,20 @@ namespace qltdl.view
         {
             try
             {
-                DataGridViewRow row = new DataGridViewRow();
-                row = dtgtt.Rows[rowindex];
-                this.dtgtt.Rows.Remove(row);
+                if(dkxoa==1)
+                {
+                    DataGridViewRow row = new DataGridViewRow();
+                    row = dtgtt.Rows[rowindex];
+                    this.dtgtt.Rows.Remove(row);
+                }
+                else
+                    if(dkxoa==0)
+                {
+                    DataGridViewRow row = new DataGridViewRow();
+                    row = dtgt.Rows[rowindex];
+                    this.dtgt.Rows.Remove(row);
+                }
+                
             }
             catch (Exception ex)
             {
@@ -113,6 +122,74 @@ namespace qltdl.view
         private void dtgtt_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             rowindex = e.RowIndex;
+            dkxoa = 1;
+        }
+
+        private void qlbt5_Click(object sender, EventArgs e)
+        {
+            if (checktt(cbb3.Text) == 0)
+            {
+                MessageBox.Show("Địa điểm bị trùng", "Thông báo");
+            }
+            else
+                  if (String.IsNullOrEmpty(cbb3.Text))
+            {
+                MessageBox.Show("Chưa điền địa điểm", "Thông báo");
+            }
+            else
+            {
+                this.dtgtt.Rows.Add(cbb2.Text, cbb3.Text);
+            }
+        }
+
+        private void dtgt_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            rowindex = e.RowIndex;
+            dkxoa = 0;
+        }
+
+        private void qlbt1_Click(object sender, EventArgs e)
+        {
+            if (tb1.Text.Length < 2)
+                MessageBox.Show("Chưa điền tên tour", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else if (tb3.Text.Length < 2)
+                MessageBox.Show("Chưa điền giá tour", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else if (checktt(cbb3.Text) == 0)
+            {
+                MessageBox.Show("Địa điểm bị trùng", "Thông báo");
+            }
+            else
+                  if (String.IsNullOrEmpty(cbb3.Text))
+            {
+                MessageBox.Show("Chưa điền địa điểm", "Thông báo");
+            }
+            else
+                  if (dp1.Value>dp2.Value)
+            {
+                MessageBox.Show("ngày bắt đầu phải nhỏ hơn ngày kết thúc", "Thông báo");
+            }
+            else
+            {
+                QLTOUR_BUS qlt = new QLTOUR_BUS();
+                GIATOUR_BUS gt = new GIATOUR_BUS();
+                LOAITOUR_BUS lt = new LOAITOUR_BUS();
+                TOURDD_BUS tdd = new TOURDD_BUS();
+                qlt.insert(tb1.Text, tb2.Text);
+                int id = qlt.id();
+                gt.insert(id, tb3.Value, dp1.Value, dp2.Value);
+                lt.insert(tb4.Text);
+                int iddd = tdd.iddd(id);
+                
+                int rowcount = this.dtgtt.Rows.Count;
+                for (int i = 0; i < rowcount; i++)
+                {
+                    String dd = dtgtt.Rows[i].Cells[1].FormattedValue.ToString();
+
+
+                }
+
+            }
+            
         }
     }
 }

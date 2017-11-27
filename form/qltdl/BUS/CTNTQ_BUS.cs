@@ -30,9 +30,9 @@ namespace BUS
         }
         public List<CTNTQ> search(CTNTQ t)
         {
-
             return ctntq.Search(t);
         }
+        
         public List<String> auto(String tg)
         {
             List<CTNTQ> lctntq = ctntq.GetAll();

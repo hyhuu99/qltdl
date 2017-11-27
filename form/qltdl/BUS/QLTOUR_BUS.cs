@@ -21,8 +21,11 @@ namespace BUS
         {
             return qltour.GetAll();
         }
-        public bool insert(TOUR t)
+        public bool insert(String ten,String dd)
         {
+            TOUR t = new TOUR();
+            t.TENGOI = ten;
+            t.DACDIEM = dd;
             return qltour.Insert(t);
         }
         public bool edit(TOUR t)
@@ -32,6 +35,10 @@ namespace BUS
         public List<TOUR> search(TOUR t)
         {           
             return qltour.Search(t);
+        }
+        public int id()
+        {
+            return qltour.GetAll().Max(c => c.ID);
         }
     
   

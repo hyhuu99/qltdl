@@ -20,7 +20,7 @@ namespace DTO
             this.CTNTQs = new HashSet<CTNTQ>();
         }
     
-        public string ID { get; set; }
+        public int ID { get; set; }
         public string TENGOI { get; set; }
         public string TENNUOC { get; set; }
     

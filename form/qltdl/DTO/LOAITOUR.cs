@@ -15,7 +15,7 @@ namespace DTO
     public partial class LOAITOUR
     {
         public int ID { get; set; }
-        public string IDT { get; set; }
+        public int IDT { get; set; }
         public string TENLOAI { get; set; }
     
         public virtual TOUR TOUR { get; set; }
