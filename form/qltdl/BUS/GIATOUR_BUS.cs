@@ -36,7 +36,11 @@ namespace BUS
         {           
             return gt.Search(t);
         }
-    
-  
+        public GIATOUR search(int id)
+        {
+            return gt.GetAll().FirstOrDefault(c => c.IDT == id);
+        }
+
+
     }
 }

@@ -57,6 +57,10 @@
       <Project>{4af9a138-d8ae-4fe2-b007-14ea3f76f62f}</Project>
       <Name>DTO</Name>
     </ProjectReference>
+    <ProjectReference Include="..\viewmodel\viewmodel.csproj">
+      <Project>{3a10600a-f041-4f0b-b6aa-09cf695960ba}</Project>
+      <Name>viewmodel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

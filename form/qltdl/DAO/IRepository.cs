@@ -22,7 +22,7 @@ namespace DAO
         //bool Delete<T>(T obj) where T : class, new();
         //bool Update<T>(T obj) where T : class, new();
         List<T> GetAll();
-        T GetById(T obj);
+        T GetById(int id);
         bool Insert(T obj);
         bool Delete(T obj);
         bool Update(T obj);

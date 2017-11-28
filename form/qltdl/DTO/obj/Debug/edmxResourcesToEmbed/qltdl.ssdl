@@ -5,8 +5,8 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="IDTT" Type="nvarchar" MaxLength="4" Nullable="false" />
-    <Property Name="TENGOI" Type="nvarchar" MaxLength="255" />
+    <Property Name="IDTT" Type="int" Nullable="false" />
+    <Property Name="TENGOI" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="CTTT">
     <Key>
@@ -23,7 +23,7 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="IDT" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="IDT" Type="int" Nullable="false" />
     <Property Name="TENGOI" Type="nvarchar(max)" />
     <Property Name="NGAYBD" Type="datetime" />
     <Property Name="NGAYKT" Type="datetime" />
@@ -34,7 +34,7 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="IDT" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="IDT" Type="int" Nullable="false" />
     <Property Name="GIATOUR" Type="money" Nullable="false" />
     <Property Name="NGAYBD" Type="datetime" />
     <Property Name="NGAYKT" Type="datetime" />
@@ -57,7 +57,7 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="IDT" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="IDT" Type="int" Nullable="false" />
     <Property Name="TENLOAI" Type="nchar" MaxLength="255" />
   </EntityType>
   <EntityType Name="LOAITT">
@@ -81,9 +81,9 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="nvarchar" MaxLength="4" Nullable="false" />
-    <Property Name="TENGOI" Type="nvarchar" MaxLength="255" />
-    <Property Name="TENNUOC" Type="nvarchar" MaxLength="255" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TENGOI" Type="nvarchar(max)" />
+    <Property Name="TENNUOC" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="NVNV">
     <Key>
@@ -102,6 +102,16 @@
     <Property Name="IDNVU" Type="int" Nullable="false" />
     <Property Name="IDNV" Type="int" Nullable="false" />
   </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
   <EntityType Name="TGTOUR">
     <Key>
       <PropertyRef Name="ID" />
@@ -115,17 +125,16 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="nvarchar" MaxLength="10" Nullable="false" />
-    <Property Name="TENGOI" Type="nvarchar" MaxLength="255" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TENGOI" Type="nvarchar(max)" />
     <Property Name="DACDIEM" Type="nvarchar(max)" />
-    <Property Name="GIATOUR" Type="money" />
   </EntityType>
   <EntityType Name="TOURDD">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="IDT" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="IDT" Type="int" Nullable="false" />
     <Property Name="IDDD" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="FK__CTNTQ__IDTT__29572725">
@@ -296,6 +305,7 @@
     <EntitySet Name="NOITHAMQUAN" EntityType="Self.NOITHAMQUAN" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NVNV" EntityType="Self.NVNV" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NVTD" EntityType="Self.NVTD" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TGTOUR" EntityType="Self.TGTOUR" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TOUR" EntityType="Self.TOUR" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TOURDD" EntityType="Self.TOURDD" Schema="dbo" store:Type="Tables" />

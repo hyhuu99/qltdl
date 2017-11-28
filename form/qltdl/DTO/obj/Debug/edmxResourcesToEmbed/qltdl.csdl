@@ -12,6 +12,7 @@
     <EntitySet Name="NOITHAMQUANs" EntityType="QLTDLModel.NOITHAMQUAN" />
     <EntitySet Name="NVNVs" EntityType="QLTDLModel.NVNV" />
     <EntitySet Name="NVTDs" EntityType="QLTDLModel.NVTD" />
+    <EntitySet Name="sysdiagrams" EntityType="QLTDLModel.sysdiagram" />
     <EntitySet Name="TGTOURs" EntityType="QLTDLModel.TGTOUR" />
     <EntitySet Name="TOURs" EntityType="QLTDLModel.TOUR" />
     <EntitySet Name="TOURDDs" EntityType="QLTDLModel.TOURDD" />
@@ -73,8 +74,8 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="IDTT" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
-    <Property Name="TENGOI" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="IDTT" Type="Int32" Nullable="false" />
+    <Property Name="TENGOI" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="NOITHAMQUAN" Relationship="QLTDLModel.FK__CTNTQ__IDTT__29572725" FromRole="CTNTQ" ToRole="NOITHAMQUAN" />
     <NavigationProperty Name="TOURDDs" Relationship="QLTDLModel.FK__TOURDD__IDDD__2C3393D0" FromRole="CTNTQ" ToRole="TOURDD" />
   </EntityType>
@@ -95,7 +96,7 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="IDT" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="IDT" Type="Int32" Nullable="false" />
     <Property Name="TENGOI" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="NGAYBD" Type="DateTime" Precision="3" />
     <Property Name="NGAYKT" Type="DateTime" Precision="3" />
@@ -109,7 +110,7 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="IDT" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="IDT" Type="Int32" Nullable="false" />
     <Property Name="GIATOUR1" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
     <Property Name="NGAYBD" Type="DateTime" Precision="3" />
     <Property Name="NGAYKT" Type="DateTime" Precision="3" />
@@ -134,7 +135,7 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="IDT" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="IDT" Type="Int32" Nullable="false" />
     <Property Name="TENLOAI" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
     <NavigationProperty Name="TOUR" Relationship="QLTDLModel.FK__LOAITOUR__IDT__2D27B809" FromRole="LOAITOUR" ToRole="TOUR" />
   </EntityType>
@@ -162,9 +163,9 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
-    <Property Name="TENGOI" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="TENNUOC" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TENGOI" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TENNUOC" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="CTNTQs" Relationship="QLTDLModel.FK__CTNTQ__IDTT__29572725" FromRole="NOITHAMQUAN" ToRole="CTNTQ" />
   </EntityType>
   <EntityType Name="NVNV">
@@ -189,6 +190,16 @@
     <NavigationProperty Name="NHANVIEN" Relationship="QLTDLModel.FK__NVTD__IDNV__31EC6D26" FromRole="NVTD" ToRole="NHANVIEN" />
     <NavigationProperty Name="NVNV" Relationship="QLTDLModel.FK__NVTD__IDNVU__30F848ED" FromRole="NVTD" ToRole="NVNV" />
   </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
   <EntityType Name="TGTOUR">
     <Key>
       <PropertyRef Name="ID" />
@@ -204,10 +215,9 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
-    <Property Name="TENGOI" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TENGOI" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="DACDIEM" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="GIATOUR" Type="Decimal" Precision="19" Scale="4" />
     <NavigationProperty Name="GIATOURs" Relationship="QLTDLModel.FK__GIATOUR__IDT__2B3F6F97" FromRole="TOUR" ToRole="GIATOUR" />
     <NavigationProperty Name="LOAITOURs" Relationship="QLTDLModel.FK__LOAITOUR__IDT__2D27B809" FromRole="TOUR" ToRole="LOAITOUR" />
     <NavigationProperty Name="TOURDDs" Relationship="QLTDLModel.FK__TOURDD__IDT__2A4B4B5E" FromRole="TOUR" ToRole="TOURDD" />
@@ -217,7 +227,7 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="IDT" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="IDT" Type="Int32" Nullable="false" />
     <Property Name="IDDD" Type="Int32" Nullable="false" />
     <NavigationProperty Name="CTNTQ" Relationship="QLTDLModel.FK__TOURDD__IDDD__2C3393D0" FromRole="TOURDD" ToRole="CTNTQ" />
     <NavigationProperty Name="TOUR" Relationship="QLTDLModel.FK__TOURDD__IDT__2A4B4B5E" FromRole="TOURDD" ToRole="TOUR" />

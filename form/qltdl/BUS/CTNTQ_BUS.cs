@@ -47,6 +47,20 @@ namespace BUS
             }
             return lauto;
         }
+        public int iddd(String name)
+        {
+            TOURDD ct = new TOURDD();
+            List<CTNTQ> lct = new List<CTNTQ>();
+            lct = ctntq.GetAll();
+            foreach (CTNTQ t in lct)
+            {
+                if (t.TENGOI.Equals(name))
+                {
+                    return t.ID;
+                }
+            }
+            return -1;
+        }
 
     }
 }

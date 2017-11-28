@@ -19,7 +19,7 @@ namespace DAO
             return db.Set<T>().ToList();
         }
 
-        public T GetById(T obj)
+        public T GetById(int id)
         {
             throw new NotImplementedException();
         }

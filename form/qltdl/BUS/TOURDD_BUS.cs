@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using DTO;
 using DAO;
+using viewmodel;
+using System.Diagnostics;
 
 namespace BUS
 {
@@ -35,25 +37,39 @@ namespace BUS
         {           
             return tourdd.Search(t);
         }
-        public int iddd(String name)
-        {
-            TOURDD ct = new TOURDD();
-            List<TOURDD> lct = new List<TOURDD>();
-            lct = tourdd.GetAll();
-            foreach (TOURDD t in lct)
-            {
-                if (t.CTNTQ.Equals(name))
-                {
-                    return t.CTNTQ.ID;
-                }
-            }
-            return -1;
-        }
+        //public int iddd(String name)
+        //{
+        //    TOURDD ct = new TOURDD();
+        //    List<NOITHAMQUAN> lct = new List<NOITHAMQUAN>();
+        //    lct = tourdd.GetAll();
+        //    foreach (TOURDD t in lct)
+        //    {
+        //        if (t.CTNTQ.TENGOI.Equals(name))
+        //        {
+        //            return t.CTNTQ.ID;
+        //        }
+        //    }
+        //    return -1;
+        //}
         public int id()
         {
             return tourdd.GetAll().Max(c => c.ID);
         }
-    
-  
+        public List<ddview> load(int id)
+        {
+            List<ddview> lddv = new List<ddview>();
+            List<TOURDD> ltdd = tourdd.GetAll().Where(c => c.IDT==id).ToList();
+            foreach(TOURDD tdd in ltdd)
+            {
+                ddview temp = new ddview();
+                temp.tinhthanh = tdd.CTNTQ.NOITHAMQUAN.TENGOI;
+                temp.diadiem = tdd.CTNTQ.TENGOI;
+                Debug.WriteLine(tdd.CTNTQ.NOITHAMQUAN.TENGOI);
+                lddv.Add(temp);
+            }
+            return lddv;
+        }
+
+
     }
 }

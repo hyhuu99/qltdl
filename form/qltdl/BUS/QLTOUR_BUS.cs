@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DTO;
 using DAO;
+using viewmodel;
 
 namespace BUS
 {
@@ -39,6 +40,30 @@ namespace BUS
         public int id()
         {
             return qltour.GetAll().Max(c => c.ID);
+        }
+        public List<tourview> load()
+        {
+            List<TOUR> lt = qltour.GetAll();
+            GIATOUR_BUS gt = new GIATOUR_BUS();
+            LOAITOUR_BUS ltt = new LOAITOUR_BUS();
+            TOURDD_BUS tdd = new TOURDD_BUS();
+            List<tourview> ltv = new List<tourview>();
+            foreach(TOUR t in lt)
+            {
+                tourview tv = new tourview();
+                LOAITOUR lttt = ltt.search(t.ID);
+                GIATOUR gtt = gt.search(t.ID);
+                tv.loai = lttt.TENLOAI;
+                tv.tengoi = t.TENGOI;
+                tv.dacdiem = t.DACDIEM;
+                tv.giatour = gtt.GIATOUR1;
+                tv.ngaybd = gtt.NGAYBD;
+                tv.ngaykt = gtt.NGAYKT;
+                tv.id = t.ID;
+                ltv.Add(tv);
+            }
+            return ltv;
+            
         }
     
   

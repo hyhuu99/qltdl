@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS;
+using viewmodel;
+using System.Diagnostics;
 
 namespace qltdl.view
 {
@@ -17,7 +19,11 @@ namespace qltdl.view
         {
             InitializeComponent();
             autott();
-            
+            autoloai();
+            load();
+            this.qlbt1.Enabled = false;
+            this.qlbt4.Enabled = false;
+
         }
         int rowindex = -1;
         int dkxoa = 0;//1 xoa bảng tỉnh thành, 0 xóa bảng qlt
@@ -42,11 +48,37 @@ namespace qltdl.view
             CTNTQ_BUS ctntq = new CTNTQ_BUS();
             cbb3.DataSource = ctntq.auto(tg);
         }
-
+        private void autoloai()
+        {
+            LOAITOUR_BUS ltb = new LOAITOUR_BUS();
+            tb4.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            tb4.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            AutoCompleteStringCollection col = new AutoCompleteStringCollection();
+            col.AddRange(ltb.auto().ToArray());
+            cbb2.AutoCompleteCustomSource = col;
+        }
         private void cbb2_TextChanged(object sender, EventArgs e)
         {
             String tt = cbb2.Text.ToString();
             autodd(tt);
+        }
+        private void load()
+        {
+            try
+            {
+                QLTOUR_BUS qlt = new QLTOUR_BUS();
+                List<tourview> ltv = qlt.load();
+                this.dtgt.DataSource = ltv;
+                dtgt.Columns["id"].Visible = false;
+                
+                if (!ltv.Any())
+                    MessageBox.Show("Không có dữ liệu", "Thông báo", MessageBoxButtons.OK);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                MessageBox.Show("Lỗi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void qlbt3_Click(object sender, EventArgs e)
@@ -123,6 +155,7 @@ namespace qltdl.view
         {
             rowindex = e.RowIndex;
             dkxoa = 1;
+            this.qlbt4.Enabled = true;
         }
 
         private void qlbt5_Click(object sender, EventArgs e)
@@ -139,25 +172,34 @@ namespace qltdl.view
             else
             {
                 this.dtgtt.Rows.Add(cbb2.Text, cbb3.Text);
+                this.qlbt1.Enabled = true;
             }
         }
 
         private void dtgt_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            
             rowindex = e.RowIndex;
             dkxoa = 0;
+            int id = int.Parse(this.dtgt.CurrentRow.Cells[6].Value.ToString());
+            loaddd(id);
+            //Debug.WriteLine(this.dtgt.CurrentRow.Cells[6].Value.ToString());
         }
-
+        private void loaddd(int i)
+        {
+            TOURDD_BUS tdd = new TOURDD_BUS();
+            List<ddview> lddv = new List<ddview>();
+            lddv = tdd.load(i);
+            this.dtgtt.DataSource = lddv;
+            if (!lddv.Any())
+                MessageBox.Show("Không có dữ liệu", "Thông báo", MessageBoxButtons.OK);
+        }
         private void qlbt1_Click(object sender, EventArgs e)
         {
             if (tb1.Text.Length < 2)
                 MessageBox.Show("Chưa điền tên tour", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else if (tb3.Text.Length < 2)
                 MessageBox.Show("Chưa điền giá tour", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else if (checktt(cbb3.Text) == 0)
-            {
-                MessageBox.Show("Địa điểm bị trùng", "Thông báo");
-            }
             else
                   if (String.IsNullOrEmpty(cbb3.Text))
             {
@@ -169,25 +211,33 @@ namespace qltdl.view
                 MessageBox.Show("ngày bắt đầu phải nhỏ hơn ngày kết thúc", "Thông báo");
             }
             else
+                if(String.IsNullOrEmpty(dtgtt.Rows[0].Cells[1].FormattedValue.ToString()))
+            {
+                MessageBox.Show("Chưa điền địa điểm", "Thông báo");
+            }
+            else
             {
                 QLTOUR_BUS qlt = new QLTOUR_BUS();
                 GIATOUR_BUS gt = new GIATOUR_BUS();
                 LOAITOUR_BUS lt = new LOAITOUR_BUS();
                 TOURDD_BUS tdd = new TOURDD_BUS();
+                CTNTQ_BUS ctntq = new CTNTQ_BUS();
                 qlt.insert(tb1.Text, tb2.Text);
                 int id = qlt.id();
                 gt.insert(id, tb3.Value, dp1.Value, dp2.Value);
-                lt.insert(tb4.Text);
-                int iddd = tdd.iddd(id);
+                Debug.WriteLine(tb3.Value+ " test");
+                lt.insert(id,tb4.Text);
                 
                 int rowcount = this.dtgtt.Rows.Count;
                 for (int i = 0; i < rowcount; i++)
                 {
                     String dd = dtgtt.Rows[i].Cells[1].FormattedValue.ToString();
-
-
+                    int iddd = ctntq.iddd(dd);
+                    bool ok= tdd.insert(id, iddd);
+                    Debug.WriteLine(id+" "+iddd);
+                    Debug.WriteLine(ok);
                 }
-
+                MessageBox.Show("Thêm thành công", "Thông báo");
             }
             
         }

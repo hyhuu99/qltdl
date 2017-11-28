@@ -11,32 +11,33 @@ namespace BUS
 {
     public class LOAITOUR_BUS
     {
-        IRepository<LOAITOUR> ntq;
+        IRepository<LOAITOUR> lt;
         public LOAITOUR_BUS()
         {
-            ntq = new Repository<LOAITOUR>();
+            lt = new Repository<LOAITOUR>();
         }
         public List<LOAITOUR> GetAll()
         {
-            return ntq.GetAll();
+            return lt.GetAll();
         }
-        public bool insert(String ten)
+        public bool insert(int idt,String ten)
         {
-            LOAITOUR lt = new LOAITOUR();
-            lt.TENLOAI = ten;
-            return ntq.Insert(lt);
+            LOAITOUR ltt = new LOAITOUR();
+            ltt.IDT = idt;
+            ltt.TENLOAI = ten;
+            return lt.Insert(ltt);
         }
         public bool edit(LOAITOUR t)
         {
-            return ntq.Update(t);
+            return lt.Update(t);
         }
         public List<LOAITOUR> search(LOAITOUR t)
         {
-            return ntq.Search(t);
+            return lt.Search(t);
         }
         public List<String> auto()
         {
-            List<LOAITOUR> lntq = ntq.GetAll();
+            List<LOAITOUR> lntq = lt.GetAll();
             List<String> lauto= new List<String>();
             foreach(LOAITOUR ntq in lntq)
             {
@@ -44,6 +45,10 @@ namespace BUS
                 //Debug.WriteLine(ntq.TENGOI);
             }
             return lauto;
+        }
+        public LOAITOUR search(int id)
+        {
+            return lt.GetAll().FirstOrDefault(c => c.IDT == id);
         }
     }
 }
