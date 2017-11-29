@@ -17,7 +17,6 @@ namespace DTO
         public int ID { get; set; }
         public int IDKH { get; set; }
         public int IDDDL { get; set; }
-        public Nullable<System.DateTime> NGAYXUAT { get; set; }
     
         public virtual DOANDL DOANDL { get; set; }
         public virtual KH KH { get; set; }

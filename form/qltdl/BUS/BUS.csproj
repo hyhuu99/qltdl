@@ -40,6 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TGTOUR_BUS.cs" />
+    <Compile Include="NVTD_BUS.cs" />
+    <Compile Include="NVNV_BUS.cs" />
+    <Compile Include="NHANVIEN_BUS.cs" />
+    <Compile Include="LOAITT_BUS.cs" />
+    <Compile Include="KH_BUS.cs" />
+    <Compile Include="DOANDL_BUS.cs" />
+    <Compile Include="CTTT_BUS.cs" />
     <Compile Include="CTNTQ_BUS.cs" />
     <Compile Include="LOAITOUR_BUS .cs" />
     <Compile Include="NOITHAMQUAN_BUS.cs" />

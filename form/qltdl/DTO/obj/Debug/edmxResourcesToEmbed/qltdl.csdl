@@ -12,7 +12,6 @@
     <EntitySet Name="NOITHAMQUANs" EntityType="QLTDLModel.NOITHAMQUAN" />
     <EntitySet Name="NVNVs" EntityType="QLTDLModel.NVNV" />
     <EntitySet Name="NVTDs" EntityType="QLTDLModel.NVTD" />
-    <EntitySet Name="sysdiagrams" EntityType="QLTDLModel.sysdiagram" />
     <EntitySet Name="TGTOURs" EntityType="QLTDLModel.TGTOUR" />
     <EntitySet Name="TOURs" EntityType="QLTDLModel.TOUR" />
     <EntitySet Name="TOURDDs" EntityType="QLTDLModel.TOURDD" />
@@ -190,16 +189,6 @@
     <NavigationProperty Name="NHANVIEN" Relationship="QLTDLModel.FK__NVTD__IDNV__31EC6D26" FromRole="NVTD" ToRole="NHANVIEN" />
     <NavigationProperty Name="NVNV" Relationship="QLTDLModel.FK__NVTD__IDNVU__30F848ED" FromRole="NVTD" ToRole="NVNV" />
   </EntityType>
-  <EntityType Name="sysdiagram">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-  </EntityType>
   <EntityType Name="TGTOUR">
     <Key>
       <PropertyRef Name="ID" />
@@ -207,7 +196,6 @@
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="IDKH" Type="Int32" Nullable="false" />
     <Property Name="IDDDL" Type="Int32" Nullable="false" />
-    <Property Name="NGAYXUAT" Type="DateTime" Precision="3" />
     <NavigationProperty Name="DOANDL" Relationship="QLTDLModel.FK__TGTOUR__IDDDL__34C8D9D1" FromRole="TGTOUR" ToRole="DOANDL" />
     <NavigationProperty Name="KH" Relationship="QLTDLModel.FK__TGTOUR__IDKH__33D4B598" FromRole="TGTOUR" ToRole="KH" />
   </EntityType>

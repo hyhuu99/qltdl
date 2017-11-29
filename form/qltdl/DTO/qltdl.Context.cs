@@ -36,7 +36,6 @@ namespace DTO
         public virtual DbSet<NOITHAMQUAN> NOITHAMQUANs { get; set; }
         public virtual DbSet<NVNV> NVNVs { get; set; }
         public virtual DbSet<NVTD> NVTDs { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TGTOUR> TGTOURs { get; set; }
         public virtual DbSet<TOUR> TOURs { get; set; }
         public virtual DbSet<TOURDD> TOURDDs { get; set; }

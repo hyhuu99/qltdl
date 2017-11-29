@@ -98,9 +98,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>qltdl.edmx</DependentUpon>
     </Compile>
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>qltdl.tt</DependentUpon>
-    </Compile>
     <Compile Include="TGTOUR.cs">
       <DependentUpon>qltdl.tt</DependentUpon>
     </Compile>
