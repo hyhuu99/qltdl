@@ -16,6 +16,10 @@ namespace BUS
         {
             doandl = new Repository<DOANDL>();
         }
+        public int testing_bus()
+        {
+            int testing =20;
+        }
        
     }
 }
