@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tbid = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.qlbt2 = new System.Windows.Forms.Button();
             this.tb4 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.dp2 = new System.Windows.Forms.DateTimePicker();
@@ -47,6 +49,8 @@
             this.cbb2 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dtgtt = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.qlbt4 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -61,9 +65,6 @@
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tbid = new System.Windows.Forms.TextBox();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tb3)).BeginInit();
@@ -83,9 +84,18 @@
             this.panel1.Size = new System.Drawing.Size(813, 462);
             this.panel1.TabIndex = 1;
             // 
+            // tbid
+            // 
+            this.tbid.Location = new System.Drawing.Point(796, 32);
+            this.tbid.Name = "tbid";
+            this.tbid.Size = new System.Drawing.Size(16, 22);
+            this.tbid.TabIndex = 8;
+            this.tbid.Visible = false;
+            // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.qlbt2);
             this.panel2.Controls.Add(this.tb4);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.dp2);
@@ -112,6 +122,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(261, 408);
             this.panel2.TabIndex = 7;
+            // 
+            // qlbt2
+            // 
+            this.qlbt2.Location = new System.Drawing.Point(-1, 243);
+            this.qlbt2.Name = "qlbt2";
+            this.qlbt2.Size = new System.Drawing.Size(21, 23);
+            this.qlbt2.TabIndex = 29;
+            this.qlbt2.Text = "x";
+            this.qlbt2.UseVisualStyleBackColor = true;
+            this.qlbt2.Click += new System.EventHandler(this.qlbt2_Click);
             // 
             // tb4
             // 
@@ -164,9 +184,15 @@
             // 
             this.tb3.BackColor = System.Drawing.SystemColors.Info;
             this.tb3.Location = new System.Drawing.Point(110, 69);
+            this.tb3.Maximum = new decimal(new int[] {
+            1316134911,
+            2328,
+            0,
+            0});
             this.tb3.Name = "tb3";
             this.tb3.Size = new System.Drawing.Size(151, 22);
             this.tb3.TabIndex = 23;
+            this.tb3.ThousandsSeparator = true;
             // 
             // qlbt5
             // 
@@ -186,10 +212,10 @@
             // 
             this.qlbt1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.qlbt1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.qlbt1.Location = new System.Drawing.Point(82, 244);
+            this.qlbt1.Location = new System.Drawing.Point(91, 244);
             this.qlbt1.Margin = new System.Windows.Forms.Padding(4);
             this.qlbt1.Name = "qlbt1";
-            this.qlbt1.Size = new System.Drawing.Size(57, 22);
+            this.qlbt1.Size = new System.Drawing.Size(48, 22);
             this.qlbt1.TabIndex = 22;
             this.qlbt1.Text = "Lưu";
             this.qlbt1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -200,10 +226,10 @@
             // 
             this.qlbt3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.qlbt3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.qlbt3.Location = new System.Drawing.Point(7, 244);
+            this.qlbt3.Location = new System.Drawing.Point(41, 244);
             this.qlbt3.Margin = new System.Windows.Forms.Padding(4);
             this.qlbt3.Name = "qlbt3";
-            this.qlbt3.Size = new System.Drawing.Size(57, 22);
+            this.qlbt3.Size = new System.Drawing.Size(42, 22);
             this.qlbt3.TabIndex = 22;
             this.qlbt3.Text = "Sửa";
             this.qlbt3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -267,6 +293,25 @@
             this.dtgtt.Size = new System.Drawing.Size(259, 134);
             this.dtgtt.TabIndex = 17;
             this.dtgtt.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgtt_CellClick);
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "tinhthanh";
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridViewTextBoxColumn12.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewTextBoxColumn12.HeaderText = "Tỉnh thành";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
+            this.dataGridViewTextBoxColumn12.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "diadiem";
+            this.dataGridViewTextBoxColumn13.HeaderText = "Địa điểm";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            this.dataGridViewTextBoxColumn13.Width = 125;
             // 
             // qlbt4
             // 
@@ -415,32 +460,6 @@
             this.Column2.HeaderText = "Ngày kết thúc";
             this.Column2.Name = "Column2";
             // 
-            // tbid
-            // 
-            this.tbid.Location = new System.Drawing.Point(796, 32);
-            this.tbid.Name = "tbid";
-            this.tbid.Size = new System.Drawing.Size(16, 22);
-            this.tbid.TabIndex = 8;
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "tinhthanh";
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridViewTextBoxColumn12.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewTextBoxColumn12.HeaderText = "Tỉnh thành";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.ReadOnly = true;
-            this.dataGridViewTextBoxColumn12.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "diadiem";
-            this.dataGridViewTextBoxColumn13.HeaderText = "Địa điểm";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.ReadOnly = true;
-            this.dataGridViewTextBoxColumn13.Width = 125;
-            // 
             // quanlytour
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -493,8 +512,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.TextBox tbid;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.TextBox tbid;
+        private System.Windows.Forms.Button qlbt2;
     }
 }

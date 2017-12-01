@@ -69,7 +69,15 @@ namespace BUS
             }
             return lddv;
         }
-
+        public void delete(int idt)
+        {
+            TOURDD tdd = new TOURDD();
+            List<TOURDD> ltdd = tourdd.GetAll().Where(c => c.IDT == idt).ToList();
+            foreach(TOURDD t in ltdd)
+            {
+                tourdd.Delete(t);
+            }
+        }
 
     }
 }

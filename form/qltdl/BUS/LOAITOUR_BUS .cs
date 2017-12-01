@@ -27,10 +27,6 @@ namespace BUS
             ltt.TENLOAI = ten;
             return lt.Insert(ltt);
         }
-        public bool edit(LOAITOUR t)
-        {
-            return lt.Update(t);
-        }
         public List<LOAITOUR> search(LOAITOUR t)
         {
             return lt.Search(t);
@@ -49,6 +45,14 @@ namespace BUS
         public LOAITOUR search(int id)
         {
             return lt.GetAll().FirstOrDefault(c => c.IDT == id);
+        }
+        public bool update(int idt, String ten)
+        {
+            LOAITOUR ltt = new LOAITOUR();
+            ltt.ID = search(idt).ID;
+            ltt.IDT = idt;
+            ltt.TENLOAI = ten;
+            return lt.Update(ltt);
         }
     }
 }

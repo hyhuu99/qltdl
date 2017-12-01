@@ -65,6 +65,14 @@ namespace BUS
             return ltv;
             
         }
+        public bool update(int id,String ten, String dd)
+        {
+            TOUR t = new TOUR();
+            t.ID = id;
+            t.TENGOI = ten;
+            t.DACDIEM = dd;
+            return qltour.Update(t);
+        }
     
   
     }
