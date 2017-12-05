@@ -1,0 +1,44 @@
+﻿@model IEnumerable<DTO.NVTD>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Tên đoàn")
+        </th>
+        <th>
+            @Html.DisplayName("Tên nhân viên")
+        </th>
+        <th>
+            @Html.DisplayName("Nhiệm vụ")
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DOANDL.TENGOI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NHANVIEN.TENNV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NHIEMVU.NHIEMVU1)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

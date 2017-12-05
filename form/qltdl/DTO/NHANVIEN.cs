@@ -17,7 +17,6 @@ namespace DTO
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public NHANVIEN()
         {
-            this.NVNVs = new HashSet<NVNV>();
             this.NVTDs = new HashSet<NVTD>();
         }
     
@@ -26,9 +25,8 @@ namespace DTO
         public string HOTL { get; set; }
         public Nullable<int> SDT { get; set; }
         public string GIOITINH { get; set; }
+        public Nullable<int> CMND { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<NVNV> NVNVs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<NVTD> NVTDs { get; set; }
     }

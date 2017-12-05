@@ -12,25 +12,25 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.HOTL)
+            @Html.DisplayName("Họ tên lót")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TEN)
+            @Html.DisplayName("Tên")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CMND)
+            @Html.DisplayName("CMND")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.GIOITINH)
+            @Html.DisplayName("Giới tính")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DIACHI)
+            @Html.DisplayName("Địa chỉ")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.SDT)
+            @Html.DisplayName("Số điện thoại")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.QUOCTICH)
+            @Html.DisplayName("Quốc tịch")
         </th>
         <th></th>
     </tr>
@@ -60,8 +60,7 @@
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            @Html.ActionLink("Details", "Details", new { id=item.ID })
         </td>
     </tr>
 }

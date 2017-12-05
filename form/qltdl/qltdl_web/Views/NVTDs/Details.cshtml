@@ -1,0 +1,42 @@
+﻿@model DTO.NVTD
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Nhân viên theo đoàn</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DOANDL.TENGOI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DOANDL.TENGOI)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NHANVIEN.TENNV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NHANVIEN.TENNV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NHIEMVU.NHIEMVU1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NHIEMVU.NHIEMVU1)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

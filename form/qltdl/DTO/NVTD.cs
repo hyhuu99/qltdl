@@ -21,6 +21,6 @@ namespace DTO
     
         public virtual DOANDL DOANDL { get; set; }
         public virtual NHANVIEN NHANVIEN { get; set; }
-        public virtual NVNV NVNV { get; set; }
+        public virtual NHIEMVU NHIEMVU { get; set; }
     }
 }

@@ -17,7 +17,7 @@ namespace qltdl_web.Controllers
         // GET: DOANDLs
         public ActionResult Index()
         {
-            return View(db.DOANDLs.ToList());
+            return View(ddl.getall().ToList());
         }
 
         // GET: DOANDLs/Details/5
@@ -27,7 +27,7 @@ namespace qltdl_web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            DOANDL dOANDL = db.DOANDLs.Find(id);
+            DOANDL dOANDL = ddl.searchddl(id);
             if (dOANDL == null)
             {
                 return HttpNotFound();
@@ -47,7 +47,7 @@ namespace qltdl_web.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IDT,TENGOI,NGAYBD,NGAYKT")] DOANDL doandl)
+        public ActionResult Create([Bind(Include = "IDT,TENGOI,NGAYBD,NGAYKT,TONGKINHPHI")] DOANDL doandl)
         {
             if (ModelState.IsValid)
             {
@@ -72,7 +72,7 @@ namespace qltdl_web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            DOANDL dOANDL = db.DOANDLs.Find(id);
+            DOANDL dOANDL = ddl.searchddl(id);
             if (dOANDL == null)
             {
                 return HttpNotFound();
@@ -85,42 +85,41 @@ namespace qltdl_web.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,IDT,TENGOI,NGAYBD,NGAYKT,TONGKINHPHI")] DOANDL dOANDL)
+        public ActionResult Edit([Bind(Include = "ID,IDT,TENGOI,NGAYBD,NGAYKT")] DOANDL doandl)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(dOANDL).State = EntityState.Modified;
-                db.SaveChanges();
+                ddl.updateddl(doandl);
                 return RedirectToAction("Index");
             }
-            return View(dOANDL);
+            return View(doandl);
         }
 
-        // GET: DOANDLs/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            DOANDL dOANDL = db.DOANDLs.Find(id);
-            if (dOANDL == null)
-            {
-                return HttpNotFound();
-            }
-            return View(dOANDL);
-        }
+        //// GET: DOANDLs/Delete/5
+        //public ActionResult Delete(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    DOANDL dOANDL = db.DOANDLs.Find(id);
+        //    if (dOANDL == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(dOANDL);
+        //}
 
-        // POST: DOANDLs/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            DOANDL dOANDL = db.DOANDLs.Find(id);
-            db.DOANDLs.Remove(dOANDL);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
+        //// POST: DOANDLs/Delete/5
+        //[HttpPost, ActionName("Delete")]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult DeleteConfirmed(int id)
+        //{
+        //    DOANDL dOANDL = db.DOANDLs.Find(id);
+        //    db.DOANDLs.Remove(dOANDL);
+        //    db.SaveChanges();
+        //    return RedirectToAction("Index");
+        //}
 
         protected override void Dispose(bool disposing)
         {

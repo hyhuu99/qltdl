@@ -73,10 +73,10 @@
     <Compile Include="NHANVIEN.cs">
       <DependentUpon>qltdl.tt</DependentUpon>
     </Compile>
-    <Compile Include="NOITHAMQUAN.cs">
+    <Compile Include="NHIEMVU.cs">
       <DependentUpon>qltdl.tt</DependentUpon>
     </Compile>
-    <Compile Include="NVNV.cs">
+    <Compile Include="NOITHAMQUAN.cs">
       <DependentUpon>qltdl.tt</DependentUpon>
     </Compile>
     <Compile Include="NVTD.cs">

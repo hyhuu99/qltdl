@@ -33,6 +33,14 @@ namespace BUS
             dl.TONGKINHPHI = 0;
             return doandl.Insert(dl);
         }
+        public DOANDL searchddl(int? id)
+        {
+            return doandl.GetById(id);
+        }
+        public bool updateddl(DOANDL dl)
+        {
+            return doandl.Update(dl);
+        }
        
     }
 }

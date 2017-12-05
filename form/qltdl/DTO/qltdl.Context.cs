@@ -33,8 +33,8 @@ namespace DTO
         public virtual DbSet<LOAITOUR> LOAITOURs { get; set; }
         public virtual DbSet<LOAITT> LOAITTs { get; set; }
         public virtual DbSet<NHANVIEN> NHANVIENs { get; set; }
+        public virtual DbSet<NHIEMVU> NHIEMVUs { get; set; }
         public virtual DbSet<NOITHAMQUAN> NOITHAMQUANs { get; set; }
-        public virtual DbSet<NVNV> NVNVs { get; set; }
         public virtual DbSet<NVTD> NVTDs { get; set; }
         public virtual DbSet<TGTOUR> TGTOURs { get; set; }
         public virtual DbSet<TOUR> TOURs { get; set; }

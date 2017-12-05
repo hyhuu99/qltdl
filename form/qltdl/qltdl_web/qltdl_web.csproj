@@ -47,10 +47,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
@@ -59,6 +59,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -148,10 +150,13 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CTTTsController.cs" />
     <Compile Include="Controllers\DOANDLsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KHsController.cs" />
     <Compile Include="Controllers\NHANVIENsController.cs" />
+    <Compile Include="Controllers\NVTDsController.cs" />
+    <Compile Include="Controllers\TGTOURsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -225,14 +230,18 @@
     <Content Include="Scripts\myjquery.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -240,20 +249,30 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\DOANDLs\Create.cshtml" />
-    <Content Include="Views\DOANDLs\Delete.cshtml" />
     <Content Include="Views\DOANDLs\Details.cshtml" />
     <Content Include="Views\DOANDLs\Edit.cshtml" />
     <Content Include="Views\DOANDLs\Index.cshtml" />
     <Content Include="Views\NHANVIENs\Create.cshtml" />
-    <Content Include="Views\NHANVIENs\Delete.cshtml" />
     <Content Include="Views\NHANVIENs\Details.cshtml" />
     <Content Include="Views\NHANVIENs\Edit.cshtml" />
     <Content Include="Views\NHANVIENs\Index.cshtml" />
     <Content Include="Views\KHs\Create.cshtml" />
-    <Content Include="Views\KHs\Delete.cshtml" />
     <Content Include="Views\KHs\Details.cshtml" />
     <Content Include="Views\KHs\Edit.cshtml" />
     <Content Include="Views\KHs\Index.cshtml" />
+    <Content Include="Views\CTTTs\Create.cshtml" />
+    <Content Include="Views\CTTTs\Details.cshtml" />
+    <Content Include="Views\CTTTs\Edit.cshtml" />
+    <Content Include="Views\CTTTs\Index.cshtml" />
+    <Content Include="Views\NVTDs\Create.cshtml" />
+    <Content Include="Views\NVTDs\Details.cshtml" />
+    <Content Include="Views\NVTDs\Edit.cshtml" />
+    <Content Include="Views\NVTDs\Index.cshtml" />
+    <Content Include="Views\TGTOURs\Create.cshtml" />
+    <Content Include="Views\TGTOURs\Delete.cshtml" />
+    <Content Include="Views\TGTOURs\Details.cshtml" />
+    <Content Include="Views\TGTOURs\Edit.cshtml" />
+    <Content Include="Views\TGTOURs\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -280,6 +299,9 @@
       <Project>{4af9a138-d8ae-4fe2-b007-14ea3f76f62f}</Project>
       <Name>DTO</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

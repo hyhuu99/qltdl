@@ -35,7 +35,6 @@
             this.tbid = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.qlbt2 = new System.Windows.Forms.Button();
-            this.tb4 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.dp2 = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
@@ -65,6 +64,7 @@
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cbb4 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tb3)).BeginInit();
@@ -95,8 +95,8 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.cbb4);
             this.panel2.Controls.Add(this.qlbt2);
-            this.panel2.Controls.Add(this.tb4);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.dp2);
             this.panel2.Controls.Add(this.label7);
@@ -132,15 +132,6 @@
             this.qlbt2.Text = "x";
             this.qlbt2.UseVisualStyleBackColor = true;
             this.qlbt2.Click += new System.EventHandler(this.qlbt2_Click);
-            // 
-            // tb4
-            // 
-            this.tb4.BackColor = System.Drawing.SystemColors.Info;
-            this.tb4.Location = new System.Drawing.Point(111, 97);
-            this.tb4.Margin = new System.Windows.Forms.Padding(4);
-            this.tb4.Name = "tb4";
-            this.tb4.Size = new System.Drawing.Size(150, 22);
-            this.tb4.TabIndex = 28;
             // 
             // label8
             // 
@@ -460,6 +451,15 @@
             this.Column2.HeaderText = "Ngày kết thúc";
             this.Column2.Name = "Column2";
             // 
+            // cbb4
+            // 
+            this.cbb4.FormattingEnabled = true;
+            this.cbb4.Location = new System.Drawing.Point(110, 97);
+            this.cbb4.Margin = new System.Windows.Forms.Padding(4);
+            this.cbb4.Name = "cbb4";
+            this.cbb4.Size = new System.Drawing.Size(151, 24);
+            this.cbb4.TabIndex = 30;
+            // 
             // quanlytour
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -503,7 +503,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker dp2;
-        private System.Windows.Forms.TextBox tb4;
         private System.Windows.Forms.Button qlbt5;
         private System.Windows.Forms.Button qlbt1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
@@ -516,5 +515,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private System.Windows.Forms.TextBox tbid;
         private System.Windows.Forms.Button qlbt2;
+        private System.Windows.Forms.ComboBox cbb4;
     }
 }

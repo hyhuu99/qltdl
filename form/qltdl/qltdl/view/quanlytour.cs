@@ -53,11 +53,7 @@ namespace qltdl.view
         private void autoloai()
         {
             LOAITOUR_BUS ltb = new LOAITOUR_BUS();
-            tb4.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            tb4.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            AutoCompleteStringCollection col = new AutoCompleteStringCollection();
-            col.AddRange(ltb.auto().ToArray());
-            tb4.AutoCompleteCustomSource = col;
+            cbb4.DataSource = ltb.auto();
         }
         private void cbb2_TextChanged(object sender, EventArgs e)
         {
@@ -120,9 +116,9 @@ namespace qltdl.view
                     TOURDD_BUS tdd = new TOURDD_BUS();
                     CTNTQ_BUS ctntq = new CTNTQ_BUS();                   
                     int id = int.Parse(tbid.Text);
-                    qlt.update(id, tb1.Text, tb2.Text);
+                    int idl = lt.idloai(cbb4.Text);
+                    qlt.update(id, tb1.Text, tb2.Text,idl);
                     gt.insert(id, tb3.Value, dp1.Value, dp2.Value);                  
-                    lt.update(id, tb4.Text);
                     int rowcount = this.dtgtt.Rows.Count;
                     tdd.delete(id);
                     for (int i = 0; i < rowcount; i++)
@@ -216,7 +212,7 @@ namespace qltdl.view
                 this.tb1.Text = this.dtgt.CurrentRow.Cells[0].Value.ToString();
                 this.tb2.Text = this.dtgt.CurrentRow.Cells[1].Value.ToString();
                 this.tb3.Text = this.dtgt.CurrentRow.Cells[2].Value.ToString();
-                this.tb4.Text = this.dtgt.CurrentRow.Cells[3].Value.ToString();
+                this.cbb4.Text = this.dtgt.CurrentRow.Cells[3].Value.ToString();
                 this.dp1.Text= this.dtgt.CurrentRow.Cells[4].Value.ToString();
                 this.dp2.Text = this.dtgt.CurrentRow.Cells[5].Value.ToString();
                 this.tbid.Text= this.dtgt.CurrentRow.Cells[6].Value.ToString();
@@ -271,11 +267,13 @@ namespace qltdl.view
                     LOAITOUR_BUS lt = new LOAITOUR_BUS();
                     TOURDD_BUS tdd = new TOURDD_BUS();
                     CTNTQ_BUS ctntq = new CTNTQ_BUS();
-                    qlt.insert(tb1.Text, tb2.Text);
+                    int idl = lt.idloai(cbb4.Text);
+                    qlt.insert(tb1.Text, tb2.Text,idl);
                     int id = qlt.id();
                     gt.insert(id, tb3.Value, dp1.Value, dp2.Value);
                     Debug.WriteLine(tb3.Value + " test");
-                    lt.insert(id, tb4.Text);
+                    
+
 
                     int rowcount = this.dtgtt.Rows.Count;
                     for (int i = 0; i < rowcount; i++)

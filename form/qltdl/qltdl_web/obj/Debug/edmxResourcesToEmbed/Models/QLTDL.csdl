@@ -1,0 +1,371 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLTDLModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CTNTQ">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IDTT" Type="Int32" Nullable="false" />
+    <Property Name="TENGOI" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="NOITHAMQUAN" Relationship="Self.FK__CTNTQ__IDTT__34C8D9D1" FromRole="CTNTQ" ToRole="NOITHAMQUAN" />
+    <NavigationProperty Name="TOURDDs" Relationship="Self.FK__TOURDD__IDDD__37A5467C" FromRole="CTNTQ" ToRole="TOURDD" />
+  </EntityType>
+  <EntityType Name="CTTT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IDDDL" Type="Int32" Nullable="false" />
+    <Property Name="IDLOAI" Type="Int32" Nullable="false" />
+    <Property Name="NOIDUNG" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="THANHTIEN" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="DOANDL" Relationship="Self.FK__CTTT__IDDDL__38996AB5" FromRole="CTTT" ToRole="DOANDL" />
+    <NavigationProperty Name="LOAITT" Relationship="Self.FK__CTTT__IDLOAI__398D8EEE" FromRole="CTTT" ToRole="LOAITT" />
+  </EntityType>
+  <EntityType Name="DOANDL">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IDT" Type="Int32" Nullable="false" />
+    <Property Name="TENGOI" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="NGAYBD" Type="DateTime" Precision="3" />
+    <Property Name="NGAYKT" Type="DateTime" Precision="3" />
+    <Property Name="TONGKINHPHI" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="CTTTs" Relationship="Self.FK__CTTT__IDDDL__38996AB5" FromRole="DOANDL" ToRole="CTTT" />
+    <NavigationProperty Name="NVTDs" Relationship="Self.FK__NVTD__IDDDL__3A81B327" FromRole="DOANDL" ToRole="NVTD" />
+    <NavigationProperty Name="TGTOURs" Relationship="Self.FK__TGTOUR__IDDDL__3E52440B" FromRole="DOANDL" ToRole="TGTOUR" />
+  </EntityType>
+  <EntityType Name="GIATOUR">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IDT" Type="Int32" Nullable="false" />
+    <Property Name="GIATOUR1" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="NGAYBD" Type="DateTime" Precision="3" />
+    <Property Name="NGAYKT" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TOUR" Relationship="Self.FK__GIATOUR__IDT__36B12243" FromRole="GIATOUR" ToRole="TOUR" />
+  </EntityType>
+  <EntityType Name="KH">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HOTL" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TEN" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CMND" Type="Int32" />
+    <Property Name="GIOITINH" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="DIACHI" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SDT" Type="Int32" />
+    <Property Name="QUOCTICH" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="TGTOURs" Relationship="Self.FK__TGTOUR__IDKH__3D5E1FD2" FromRole="KH" ToRole="TGTOUR" />
+  </EntityType>
+  <EntityType Name="LOAITOUR">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TENLOAI" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="TOURs" Relationship="Self.FK__TOUR__IDL__33D4B598" FromRole="LOAITOUR" ToRole="TOUR" />
+  </EntityType>
+  <EntityType Name="LOAITT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOIDUNG" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CTTTs" Relationship="Self.FK__CTTT__IDLOAI__398D8EEE" FromRole="LOAITT" ToRole="CTTT" />
+  </EntityType>
+  <EntityType Name="NHANVIEN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TENNV" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="HOTL" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SDT" Type="Int32" />
+    <Property Name="GIOITINH" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="NVTDs" Relationship="Self.FK__NVTD__IDNV__3C69FB99" FromRole="NHANVIEN" ToRole="NVTD" />
+  </EntityType>
+  <EntityType Name="NHIEMVU">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NHIEMVU1" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="NVTDs" Relationship="Self.FK__NVTD__IDNVU__3B75D760" FromRole="NHIEMVU" ToRole="NVTD" />
+  </EntityType>
+  <EntityType Name="NOITHAMQUAN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TENGOI" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TENNUOC" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CTNTQs" Relationship="Self.FK__CTNTQ__IDTT__34C8D9D1" FromRole="NOITHAMQUAN" ToRole="CTNTQ" />
+  </EntityType>
+  <EntityType Name="NVTD">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IDDDL" Type="Int32" Nullable="false" />
+    <Property Name="IDNVU" Type="Int32" Nullable="false" />
+    <Property Name="IDNV" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="DOANDL" Relationship="Self.FK__NVTD__IDDDL__3A81B327" FromRole="NVTD" ToRole="DOANDL" />
+    <NavigationProperty Name="NHANVIEN" Relationship="Self.FK__NVTD__IDNV__3C69FB99" FromRole="NVTD" ToRole="NHANVIEN" />
+    <NavigationProperty Name="NHIEMVU" Relationship="Self.FK__NVTD__IDNVU__3B75D760" FromRole="NVTD" ToRole="NHIEMVU" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TGTOUR">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IDKH" Type="Int32" Nullable="false" />
+    <Property Name="IDDDL" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="DOANDL" Relationship="Self.FK__TGTOUR__IDDDL__3E52440B" FromRole="TGTOUR" ToRole="DOANDL" />
+    <NavigationProperty Name="KH" Relationship="Self.FK__TGTOUR__IDKH__3D5E1FD2" FromRole="TGTOUR" ToRole="KH" />
+  </EntityType>
+  <EntityType Name="TOUR">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IDL" Type="Int32" Nullable="false" />
+    <Property Name="TENGOI" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DACDIEM" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="GIATOURs" Relationship="Self.FK__GIATOUR__IDT__36B12243" FromRole="TOUR" ToRole="GIATOUR" />
+    <NavigationProperty Name="LOAITOUR" Relationship="Self.FK__TOUR__IDL__33D4B598" FromRole="TOUR" ToRole="LOAITOUR" />
+    <NavigationProperty Name="TOURDDs" Relationship="Self.FK__TOURDD__IDT__35BCFE0A" FromRole="TOUR" ToRole="TOURDD" />
+  </EntityType>
+  <EntityType Name="TOURDD">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IDT" Type="Int32" Nullable="false" />
+    <Property Name="IDDD" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="CTNTQ" Relationship="Self.FK__TOURDD__IDDD__37A5467C" FromRole="TOURDD" ToRole="CTNTQ" />
+    <NavigationProperty Name="TOUR" Relationship="Self.FK__TOURDD__IDT__35BCFE0A" FromRole="TOURDD" ToRole="TOUR" />
+  </EntityType>
+  <Association Name="FK__CTNTQ__IDTT__34C8D9D1">
+    <End Role="NOITHAMQUAN" Type="Self.NOITHAMQUAN" Multiplicity="1" />
+    <End Role="CTNTQ" Type="Self.CTNTQ" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NOITHAMQUAN">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CTNTQ">
+        <PropertyRef Name="IDTT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TOURDD__IDDD__37A5467C">
+    <End Role="CTNTQ" Type="Self.CTNTQ" Multiplicity="1" />
+    <End Role="TOURDD" Type="Self.TOURDD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CTNTQ">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TOURDD">
+        <PropertyRef Name="IDDD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CTTT__IDDDL__38996AB5">
+    <End Role="DOANDL" Type="Self.DOANDL" Multiplicity="1" />
+    <End Role="CTTT" Type="Self.CTTT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DOANDL">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CTTT">
+        <PropertyRef Name="IDDDL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CTTT__IDLOAI__398D8EEE">
+    <End Role="LOAITT" Type="Self.LOAITT" Multiplicity="1" />
+    <End Role="CTTT" Type="Self.CTTT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOAITT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CTTT">
+        <PropertyRef Name="IDLOAI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__NVTD__IDDDL__3A81B327">
+    <End Role="DOANDL" Type="Self.DOANDL" Multiplicity="1" />
+    <End Role="NVTD" Type="Self.NVTD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DOANDL">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="NVTD">
+        <PropertyRef Name="IDDDL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TGTOUR__IDDDL__3E52440B">
+    <End Role="DOANDL" Type="Self.DOANDL" Multiplicity="1" />
+    <End Role="TGTOUR" Type="Self.TGTOUR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DOANDL">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TGTOUR">
+        <PropertyRef Name="IDDDL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__GIATOUR__IDT__36B12243">
+    <End Role="TOUR" Type="Self.TOUR" Multiplicity="1" />
+    <End Role="GIATOUR" Type="Self.GIATOUR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TOUR">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GIATOUR">
+        <PropertyRef Name="IDT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TGTOUR__IDKH__3D5E1FD2">
+    <End Role="KH" Type="Self.KH" Multiplicity="1" />
+    <End Role="TGTOUR" Type="Self.TGTOUR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KH">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TGTOUR">
+        <PropertyRef Name="IDKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TOUR__IDL__33D4B598">
+    <End Role="LOAITOUR" Type="Self.LOAITOUR" Multiplicity="1" />
+    <End Role="TOUR" Type="Self.TOUR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOAITOUR">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TOUR">
+        <PropertyRef Name="IDL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__NVTD__IDNV__3C69FB99">
+    <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="1" />
+    <End Role="NVTD" Type="Self.NVTD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHANVIEN">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="NVTD">
+        <PropertyRef Name="IDNV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__NVTD__IDNVU__3B75D760">
+    <End Role="NHIEMVU" Type="Self.NHIEMVU" Multiplicity="1" />
+    <End Role="NVTD" Type="Self.NVTD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHIEMVU">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="NVTD">
+        <PropertyRef Name="IDNVU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TOURDD__IDT__35BCFE0A">
+    <End Role="TOUR" Type="Self.TOUR" Multiplicity="1" />
+    <End Role="TOURDD" Type="Self.TOURDD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TOUR">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TOURDD">
+        <PropertyRef Name="IDT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QLTDLEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CTNTQs" EntityType="Self.CTNTQ" />
+    <EntitySet Name="CTTTs" EntityType="Self.CTTT" />
+    <EntitySet Name="DOANDLs" EntityType="Self.DOANDL" />
+    <EntitySet Name="GIATOURs" EntityType="Self.GIATOUR" />
+    <EntitySet Name="KHs" EntityType="Self.KH" />
+    <EntitySet Name="LOAITOURs" EntityType="Self.LOAITOUR" />
+    <EntitySet Name="LOAITTs" EntityType="Self.LOAITT" />
+    <EntitySet Name="NHANVIENs" EntityType="Self.NHANVIEN" />
+    <EntitySet Name="NHIEMVUs" EntityType="Self.NHIEMVU" />
+    <EntitySet Name="NOITHAMQUANs" EntityType="Self.NOITHAMQUAN" />
+    <EntitySet Name="NVTDs" EntityType="Self.NVTD" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="TGTOURs" EntityType="Self.TGTOUR" />
+    <EntitySet Name="TOURs" EntityType="Self.TOUR" />
+    <EntitySet Name="TOURDDs" EntityType="Self.TOURDD" />
+    <AssociationSet Name="FK__CTNTQ__IDTT__34C8D9D1" Association="Self.FK__CTNTQ__IDTT__34C8D9D1">
+      <End Role="NOITHAMQUAN" EntitySet="NOITHAMQUANs" />
+      <End Role="CTNTQ" EntitySet="CTNTQs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TOURDD__IDDD__37A5467C" Association="Self.FK__TOURDD__IDDD__37A5467C">
+      <End Role="CTNTQ" EntitySet="CTNTQs" />
+      <End Role="TOURDD" EntitySet="TOURDDs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CTTT__IDDDL__38996AB5" Association="Self.FK__CTTT__IDDDL__38996AB5">
+      <End Role="DOANDL" EntitySet="DOANDLs" />
+      <End Role="CTTT" EntitySet="CTTTs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CTTT__IDLOAI__398D8EEE" Association="Self.FK__CTTT__IDLOAI__398D8EEE">
+      <End Role="LOAITT" EntitySet="LOAITTs" />
+      <End Role="CTTT" EntitySet="CTTTs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__NVTD__IDDDL__3A81B327" Association="Self.FK__NVTD__IDDDL__3A81B327">
+      <End Role="DOANDL" EntitySet="DOANDLs" />
+      <End Role="NVTD" EntitySet="NVTDs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TGTOUR__IDDDL__3E52440B" Association="Self.FK__TGTOUR__IDDDL__3E52440B">
+      <End Role="DOANDL" EntitySet="DOANDLs" />
+      <End Role="TGTOUR" EntitySet="TGTOURs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__GIATOUR__IDT__36B12243" Association="Self.FK__GIATOUR__IDT__36B12243">
+      <End Role="TOUR" EntitySet="TOURs" />
+      <End Role="GIATOUR" EntitySet="GIATOURs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TGTOUR__IDKH__3D5E1FD2" Association="Self.FK__TGTOUR__IDKH__3D5E1FD2">
+      <End Role="KH" EntitySet="KHs" />
+      <End Role="TGTOUR" EntitySet="TGTOURs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TOUR__IDL__33D4B598" Association="Self.FK__TOUR__IDL__33D4B598">
+      <End Role="LOAITOUR" EntitySet="LOAITOURs" />
+      <End Role="TOUR" EntitySet="TOURs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__NVTD__IDNV__3C69FB99" Association="Self.FK__NVTD__IDNV__3C69FB99">
+      <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+      <End Role="NVTD" EntitySet="NVTDs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__NVTD__IDNVU__3B75D760" Association="Self.FK__NVTD__IDNVU__3B75D760">
+      <End Role="NHIEMVU" EntitySet="NHIEMVUs" />
+      <End Role="NVTD" EntitySet="NVTDs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TOURDD__IDT__35BCFE0A" Association="Self.FK__TOURDD__IDT__35BCFE0A">
+      <End Role="TOUR" EntitySet="TOURs" />
+      <End Role="TOURDD" EntitySet="TOURDDs" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

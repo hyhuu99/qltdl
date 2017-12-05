@@ -18,18 +18,17 @@ namespace DTO
         public TOUR()
         {
             this.GIATOURs = new HashSet<GIATOUR>();
-            this.LOAITOURs = new HashSet<LOAITOUR>();
             this.TOURDDs = new HashSet<TOURDD>();
         }
     
         public int ID { get; set; }
+        public int IDL { get; set; }
         public string TENGOI { get; set; }
         public string DACDIEM { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<GIATOUR> GIATOURs { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<LOAITOUR> LOAITOURs { get; set; }
+        public virtual LOAITOUR LOAITOUR { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TOURDD> TOURDDs { get; set; }
     }

@@ -14,10 +14,16 @@ namespace DTO
     
     public partial class LOAITOUR
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public LOAITOUR()
+        {
+            this.TOURs = new HashSet<TOUR>();
+        }
+    
         public int ID { get; set; }
-        public int IDT { get; set; }
         public string TENLOAI { get; set; }
     
-        public virtual TOUR TOUR { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TOUR> TOURs { get; set; }
     }
 }

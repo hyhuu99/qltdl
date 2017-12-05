@@ -25,6 +25,15 @@
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
+      },
+      "DTO/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/DTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DTO.dll": {}
+        }
       }
     }
   },
@@ -169,10 +178,16 @@
         "netstandard.library.2.0.0.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
+    },
+    "DTO/1.0.0": {
+      "type": "project",
+      "path": "../DTO/DTO.csproj",
+      "msbuildProject": "../DTO/DTO.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
+      "DTO >= 1.0.0",
       "NETStandard.Library >= 2.0.0"
     ]
   },
@@ -208,7 +223,11 @@
       },
       "frameworks": {
         "netstandard2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "E:\\project\\qltdl\\form\\qltdl\\DTO\\DTO.csproj": {
+              "projectPath": "E:\\project\\qltdl\\form\\qltdl\\DTO\\DTO.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

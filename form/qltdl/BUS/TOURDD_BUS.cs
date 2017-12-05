@@ -55,6 +55,7 @@ namespace BUS
         {
             return tourdd.GetAll().Max(c => c.ID);
         }
+
         public List<ddview> load(int id)
         {
             List<ddview> lddv = new List<ddview>();

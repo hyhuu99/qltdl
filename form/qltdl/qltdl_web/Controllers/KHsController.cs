@@ -7,17 +7,19 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using DTO;
+using BUS;
+using System.Collections;
 
 namespace qltdl_web.Controllers
 {
     public class KHsController : Controller
     {
         private QLTDLEntities db = new QLTDLEntities();
-
+        private KH_BUS khb = new KH_BUS();
         // GET: KHs
         public ActionResult Index()
         {
-            return View(db.KHs.ToList());
+            return View(khb.getall());
         }
 
         // GET: KHs/Details/5
@@ -27,7 +29,7 @@ namespace qltdl_web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            KH kH = db.KHs.Find(id);
+            KH kH = khb.getbyid(id);
             if (kH == null)
             {
                 return HttpNotFound();
@@ -38,6 +40,14 @@ namespace qltdl_web.Controllers
         // GET: KHs/Create
         public ActionResult Create()
         {
+            //List<IEnumerable> gt = new List<IEnumerable>();
+            //gt.Add("Nam");
+            //gt.Add("Nữ");
+            //ViewBag.Gioitinh = gt.ToList();
+            List<String> genderList = new List<String>();
+            genderList.Add("Nam");
+            genderList.Add("Nữ");
+            ViewBag.Gioitinh = new SelectList(genderList, "String");
             return View();
         }
 
@@ -50,8 +60,7 @@ namespace qltdl_web.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.KHs.Add(kH);
-                db.SaveChanges();
+                khb.insert(kH);
                 return RedirectToAction("Index");
             }
 
@@ -65,7 +74,7 @@ namespace qltdl_web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            KH kH = db.KHs.Find(id);
+            KH kH = khb.getbyid(id);
             if (kH == null)
             {
                 return HttpNotFound();
@@ -90,30 +99,30 @@ namespace qltdl_web.Controllers
         }
 
         // GET: KHs/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            KH kH = db.KHs.Find(id);
-            if (kH == null)
-            {
-                return HttpNotFound();
-            }
-            return View(kH);
-        }
+        //public ActionResult Delete(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    KH kH = db.KHs.Find(id);
+        //    if (kH == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(kH);
+        //}
 
-        // POST: KHs/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            KH kH = db.KHs.Find(id);
-            db.KHs.Remove(kH);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
+        //// POST: KHs/Delete/5
+        //[HttpPost, ActionName("Delete")]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult DeleteConfirmed(int id)
+        //{
+        //    KH kH = db.KHs.Find(id);
+        //    db.KHs.Remove(kH);
+        //    db.SaveChanges();
+        //    return RedirectToAction("Index");
+        //}
 
         protected override void Dispose(bool disposing)
         {

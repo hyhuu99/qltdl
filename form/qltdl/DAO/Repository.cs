@@ -14,14 +14,15 @@ namespace DAO
     {
         private QLTDLEntities db= new QLTDLEntities();
         private static string error_message = "";
+
         public List<T> GetAll()
         {
             return db.Set<T>().ToList();
         }
 
-        public T GetById(int id)
+        public T GetById(int? id)
         {
-            throw new NotImplementedException();
+            return db.Set<T>().Find(id);
         }
 
         public bool Insert(T obj)
@@ -91,6 +92,14 @@ namespace DAO
         public List<T> Search(T obj)
         {
             throw new NotImplementedException();
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
         }
     }
 }

@@ -42,7 +42,7 @@
   <ItemGroup>
     <Compile Include="TGTOUR_BUS.cs" />
     <Compile Include="NVTD_BUS.cs" />
-    <Compile Include="NVNV_BUS.cs" />
+    <Compile Include="NHIEMVU_BUS.cs" />
     <Compile Include="NHANVIEN_BUS.cs" />
     <Compile Include="LOAITT_BUS.cs" />
     <Compile Include="KH_BUS.cs" />

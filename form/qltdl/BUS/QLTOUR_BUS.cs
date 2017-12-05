@@ -22,9 +22,10 @@ namespace BUS
         {
             return qltour.GetAll();
         }
-        public bool insert(String ten,String dd)
+        public bool insert(String ten,String dd,int idl)
         {
             TOUR t = new TOUR();
+            t.IDL = idl;
             t.TENGOI = ten;
             t.DACDIEM = dd;
             return qltour.Insert(t);
@@ -51,9 +52,8 @@ namespace BUS
             foreach(TOUR t in lt)
             {
                 tourview tv = new tourview();
-                LOAITOUR lttt = ltt.search(t.ID);
                 GIATOUR gtt = gt.search(t.ID);
-                tv.loai = lttt.TENLOAI;
+                tv.loai = t.LOAITOUR.TENLOAI;
                 tv.tengoi = t.TENGOI;
                 tv.dacdiem = t.DACDIEM;
                 tv.giatour = gtt.GIATOUR1;
@@ -65,12 +65,13 @@ namespace BUS
             return ltv;
             
         }
-        public bool update(int id,String ten, String dd)
+        public bool update(int id,String ten, String dd,int idl)
         {
             TOUR t = new TOUR();
             t.ID = id;
             t.TENGOI = ten;
             t.DACDIEM = dd;
+            t.IDL = idl;
             return qltour.Update(t);
         }
     

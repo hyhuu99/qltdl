@@ -11,10 +11,26 @@ namespace BUS
 {
     public class KH_BUS
     {
-        IRepository<KH> kh;
+        IRepository<KH> khs;
         public KH_BUS()
         {
-            kh = new Repository<KH>();
+            khs = new Repository<KH>();
+        }
+        public bool insert (KH kh)
+        {
+            return khs.Insert(kh);
+        }
+        public List<KH> getall()
+        {
+            return khs.GetAll();
+        }
+        public KH getbyid(int? id)
+        {
+            return khs.GetById(id);
+        }
+        public bool update(KH kh)
+        {
+            return khs.Update(kh);
         }
        
     }

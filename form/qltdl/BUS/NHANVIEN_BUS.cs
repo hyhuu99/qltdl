@@ -11,11 +11,30 @@ namespace BUS
 {
     public class NHANVIEN_BUS
     {
-        IRepository<NHANVIEN> nv;
+        IRepository<NHANVIEN> nvb;
+        //IRepository<NVNV> nvnv;
         public NHANVIEN_BUS()
         {
-            nv = new Repository<NHANVIEN>();
+            nvb = new Repository<NHANVIEN>();
+           // nvnv = new Repository<NVNV>();
+        }
+        public NHANVIEN getbyid(int? id)
+        {
+            return nvb.GetById(id);
+        }
+        public bool insert(NHANVIEN nv)
+        {
+            return nvb.Insert(nv);
+        }
+        public bool update(NHANVIEN nv)
+        {
+            return nvb.Update(nv);
+        }
+        public List<NHANVIEN> getall()
+        {
+            return nvb.GetAll();
         }
        
+
     }
 }

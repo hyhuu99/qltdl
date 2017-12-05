@@ -62,7 +62,6 @@
       <EntityTypeMapping TypeName="QLTDLModel.LOAITOUR">
         <MappingFragment StoreEntitySet="LOAITOUR">
           <ScalarProperty Name="TENLOAI" ColumnName="TENLOAI" />
-          <ScalarProperty Name="IDT" ColumnName="IDT" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -78,10 +77,19 @@
     <EntitySetMapping Name="NHANVIENs">
       <EntityTypeMapping TypeName="QLTDLModel.NHANVIEN">
         <MappingFragment StoreEntitySet="NHANVIEN">
+          <ScalarProperty Name="CMND" ColumnName="CMND" />
           <ScalarProperty Name="GIOITINH" ColumnName="GIOITINH" />
           <ScalarProperty Name="SDT" ColumnName="SDT" />
           <ScalarProperty Name="HOTL" ColumnName="HOTL" />
           <ScalarProperty Name="TENNV" ColumnName="TENNV" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NHIEMVUs">
+      <EntityTypeMapping TypeName="QLTDLModel.NHIEMVU">
+        <MappingFragment StoreEntitySet="NHIEMVU">
+          <ScalarProperty Name="NHIEMVU1" ColumnName="NHIEMVU" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -91,15 +99,6 @@
         <MappingFragment StoreEntitySet="NOITHAMQUAN">
           <ScalarProperty Name="TENNUOC" ColumnName="TENNUOC" />
           <ScalarProperty Name="TENGOI" ColumnName="TENGOI" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="NVNVs">
-      <EntityTypeMapping TypeName="QLTDLModel.NVNV">
-        <MappingFragment StoreEntitySet="NVNV">
-          <ScalarProperty Name="NHIEMVU" ColumnName="NHIEMVU" />
-          <ScalarProperty Name="IDNV" ColumnName="IDNV" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -128,6 +127,7 @@
         <MappingFragment StoreEntitySet="TOUR">
           <ScalarProperty Name="DACDIEM" ColumnName="DACDIEM" />
           <ScalarProperty Name="TENGOI" ColumnName="TENGOI" />
+          <ScalarProperty Name="IDL" ColumnName="IDL" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>

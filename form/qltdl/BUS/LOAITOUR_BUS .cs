@@ -20,39 +20,53 @@ namespace BUS
         {
             return lt.GetAll();
         }
-        public bool insert(int idt,String ten)
-        {
-            LOAITOUR ltt = new LOAITOUR();
-            ltt.IDT = idt;
-            ltt.TENLOAI = ten;
-            return lt.Insert(ltt);
-        }
+        //public bool insert(int idt,String ten)
+        //{
+        //    LOAITOUR ltt = new LOAITOUR();
+        //    ltt.TENLOAI = ten;
+        //    return lt.Insert(ltt);
+        //}
         public List<LOAITOUR> search(LOAITOUR t)
         {
             return lt.Search(t);
         }
         public List<String> auto()
         {
-            List<LOAITOUR> lntq = lt.GetAll();
+            List<LOAITOUR> ltt = lt.GetAll();
             List<String> lauto= new List<String>();
-            foreach(LOAITOUR ntq in lntq)
+            foreach(LOAITOUR lts in ltt)
             {
-                lauto.Add(ntq.TENLOAI);
+                lauto.Add(lts.TENLOAI);
                 //Debug.WriteLine(ntq.TENGOI);
             }
             return lauto;
         }
-        public LOAITOUR search(int id)
+        //public LOAITOUR search(int id)
+        //{
+        //    return lt.GetAll().FirstOrDefault(c => c.IDT == id);
+        //}
+        //public bool update(int idt, String ten)
+        //{
+        //    LOAITOUR ltt = new LOAITOUR();
+        //    ltt.ID = search(idt).ID;
+        //    ltt.IDT = idt;
+        //    ltt.TENLOAI = ten;
+        //    return lt.Update(ltt);
+        //}
+        public int idloai(String name)
         {
-            return lt.GetAll().FirstOrDefault(c => c.IDT == id);
+            TOURDD ct = new TOURDD();
+            List<LOAITOUR> llt = new List<LOAITOUR>();
+            llt = lt.GetAll();
+            foreach (LOAITOUR lt in llt)
+            {
+                if (lt.TENLOAI.Equals(name))
+                {
+                    return lt.ID;
+                }
+            }
+            return -1;
         }
-        public bool update(int idt, String ten)
-        {
-            LOAITOUR ltt = new LOAITOUR();
-            ltt.ID = search(idt).ID;
-            ltt.IDT = idt;
-            ltt.TENLOAI = ten;
-            return lt.Update(ltt);
-        }
+
     }
 }

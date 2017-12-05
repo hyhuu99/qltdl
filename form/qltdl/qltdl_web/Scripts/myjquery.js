@@ -10,11 +10,11 @@ $('#btnAdd').click(function () {
         "<tr>" +
         "<td>" + dynamicId + "</td>" +
         "<td>" + $('#item').val() + "</td> " +
-        "<td>" + $("#item option:selected").text() + "</td>" +
-        "<td>" + $('#amount').val() + "</td>" +
+        //"<td>" + $("#item option:selected").text() + "</td>" +
+        //"<td>" + $('#amount').val() + "</td>" +
         '<td><button class="btn btn-danger btnDelete">Delete</button></td>' +
         '<input type="hidden" name="ct.Index" value="' + (dynamicId - 1) + '" />' +
-        '<input type="hidden" name="ct[' + (dynamicId - 1) + '].MAS" value="' + $('#item').val() + '" />' +
+        '<input type="hidden" name="ct[' + (dynamicId - 1) + '].NHIEMVU" value="' + $('#item').val() + '" />' +
         '<input type="hidden" name="ct[' + (dynamicId - 1) + '].SOLUONGN" value="' + $('#amount').val() + '" />' +
         "</tr>"
 
