@@ -17,6 +17,8 @@ namespace DAO
         bool Update(T obj);
         bool Exists(T obj);
         List<T> Search(T obj);
-       
+        List<nvmodel> tknhanvien(int manv, DateTime bd, DateTime kt);
+
+
     }
 }

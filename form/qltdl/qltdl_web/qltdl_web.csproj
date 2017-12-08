@@ -157,6 +157,7 @@
     <Compile Include="Controllers\NHANVIENsController.cs" />
     <Compile Include="Controllers\NVTDsController.cs" />
     <Compile Include="Controllers\TGTOURsController.cs" />
+    <Compile Include="Controllers\tknhanvienController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -273,6 +274,7 @@
     <Content Include="Views\TGTOURs\Details.cshtml" />
     <Content Include="Views\TGTOURs\Edit.cshtml" />
     <Content Include="Views\TGTOURs\Index.cshtml" />
+    <Content Include="Views\tknhanvien\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

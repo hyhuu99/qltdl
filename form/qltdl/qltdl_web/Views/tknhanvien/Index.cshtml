@@ -1,0 +1,51 @@
+﻿@model DTO.tknhanvien
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Thống kê nhân viên theo tour</h2>
+
+@using (Html.BeginForm("Index", "tknhanvien", FormMethod.Get))
+{
+
+    <div class="form-inline">
+        @Html.Label("Tên nhân viên")
+        <div class="form-group">
+           @Html.DropDownList("IDNV", null, htmlAttributes: new { @class = "form-control" })
+        </div>
+        @Html.Label("Ngày bắt đầu")
+        <div class="form-group input-group-sm">
+            @Html.TextBox("ngaybt", null, new { @class = "form-control datepicker", placeholder = "Chọn ngày", autocomplete = "off", type = "date" })
+        </div>
+        @Html.Label("Ngày kết thúc")
+        <div class="form-group input-group-sm">
+            @Html.TextBox("ngaykt", null, new { @class = "form-control datepicker", placeholder = "Chọn ngày", autocomplete = "off", type = "date" })
+        </div>
+        <div class="form-group">
+            <div class="form-group" style="padding-left:3%">
+                <input type="submit" value="Tìm kiếm" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+<table class="table">
+    <tr>
+        <th>Tên nhân viên</th>
+        <th>Tên tour</th>
+        <th>Số lần</th>
+    </tr>
+    @foreach (var item in Model.nhanvien)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.Ten)</td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tentour)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sl)
+            </td>
+        </tr>
+    }
+</table>
+

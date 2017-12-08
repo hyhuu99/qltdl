@@ -17,6 +17,7 @@ namespace DTO
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public TOUR()
         {
+            this.DOANDLs = new HashSet<DOANDL>();
             this.GIATOURs = new HashSet<GIATOUR>();
             this.TOURDDs = new HashSet<TOURDD>();
         }
@@ -26,6 +27,8 @@ namespace DTO
         public string TENGOI { get; set; }
         public string DACDIEM { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DOANDL> DOANDLs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<GIATOUR> GIATOURs { get; set; }
         public virtual LOAITOUR LOAITOUR { get; set; }

@@ -55,5 +55,26 @@ namespace BUS
         {
             return nvub.GetAll();
         }
+        public tknhanvien nvtheotour(int manv,DateTime bd,DateTime kt)
+        {
+            List<nvmodel> nvmd= nvtd.tknhanvien(manv, bd, kt);
+            tknhanvien tk = new tknhanvien();
+            tk.nhanvien = nvmd;
+            return tk;
+        }
+        public tknhanvien khoitao()
+        {
+            tknhanvien tk = new tknhanvien();
+            List<nvmodel> lnvmd = new List<nvmodel>();
+            nvmodel nvmd = new nvmodel();
+            List<NHANVIEN> lnv = nvb.GetAll();
+            foreach(NHANVIEN nv in lnv)
+            {
+                nvmd.Ten = nv.TENNV;
+                lnvmd.Add(nvmd);
+            }
+            tk.nhanvien = lnvmd;
+            return tk;
+        }
     }
 }

@@ -126,7 +126,7 @@
     <Property Name="IDT" Type="int" Nullable="false" />
     <Property Name="IDDD" Type="int" Nullable="false" />
   </EntityType>
-  <Association Name="FK__CTNTQ__IDTT__34C8D9D1">
+  <Association Name="FK__CTNTQ__IDTT__2A4B4B5E">
     <End Role="NOITHAMQUAN" Type="Self.NOITHAMQUAN" Multiplicity="1" />
     <End Role="CTNTQ" Type="Self.CTNTQ" Multiplicity="*" />
     <ReferentialConstraint>
@@ -138,7 +138,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__CTTT__IDDDL__38996AB5">
+  <Association Name="FK__CTTT__IDDDL__2E1BDC42">
     <End Role="DOANDL" Type="Self.DOANDL" Multiplicity="1" />
     <End Role="CTTT" Type="Self.CTTT" Multiplicity="*" />
     <ReferentialConstraint>
@@ -150,7 +150,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__CTTT__IDLOAI__398D8EEE">
+  <Association Name="FK__CTTT__IDLOAI__2F10007B">
     <End Role="LOAITT" Type="Self.LOAITT" Multiplicity="1" />
     <End Role="CTTT" Type="Self.CTTT" Multiplicity="*" />
     <ReferentialConstraint>
@@ -162,7 +162,19 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__GIATOUR__IDT__36B12243">
+  <Association Name="FK__DOANDL__IDT__34C8D9D1">
+    <End Role="TOUR" Type="Self.TOUR" Multiplicity="1" />
+    <End Role="DOANDL" Type="Self.DOANDL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TOUR">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DOANDL">
+        <PropertyRef Name="IDT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__GIATOUR__IDT__2C3393D0">
     <End Role="TOUR" Type="Self.TOUR" Multiplicity="1" />
     <End Role="GIATOUR" Type="Self.GIATOUR" Multiplicity="*" />
     <ReferentialConstraint>
@@ -174,7 +186,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__NVTD__IDDDL__3A81B327">
+  <Association Name="FK__NVTD__IDDDL__300424B4">
     <End Role="DOANDL" Type="Self.DOANDL" Multiplicity="1" />
     <End Role="NVTD" Type="Self.NVTD" Multiplicity="*" />
     <ReferentialConstraint>
@@ -186,7 +198,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__NVTD__IDNV__3C69FB99">
+  <Association Name="FK__NVTD__IDNV__31EC6D26">
     <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="1" />
     <End Role="NVTD" Type="Self.NVTD" Multiplicity="*" />
     <ReferentialConstraint>
@@ -198,7 +210,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__NVTD__IDNVU__3B75D760">
+  <Association Name="FK__NVTD__IDNVU__30F848ED">
     <End Role="NHIEMVU" Type="Self.NHIEMVU" Multiplicity="1" />
     <End Role="NVTD" Type="Self.NVTD" Multiplicity="*" />
     <ReferentialConstraint>
@@ -210,7 +222,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__TGTOUR__IDDDL__3E52440B">
+  <Association Name="FK__TGTOUR__IDDDL__33D4B598">
     <End Role="DOANDL" Type="Self.DOANDL" Multiplicity="1" />
     <End Role="TGTOUR" Type="Self.TGTOUR" Multiplicity="*" />
     <ReferentialConstraint>
@@ -222,7 +234,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__TGTOUR__IDKH__3D5E1FD2">
+  <Association Name="FK__TGTOUR__IDKH__32E0915F">
     <End Role="KH" Type="Self.KH" Multiplicity="1" />
     <End Role="TGTOUR" Type="Self.TGTOUR" Multiplicity="*" />
     <ReferentialConstraint>
@@ -234,7 +246,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__TOUR__IDL__33D4B598">
+  <Association Name="FK__TOUR__IDL__29572725">
     <End Role="LOAITOUR" Type="Self.LOAITOUR" Multiplicity="1" />
     <End Role="TOUR" Type="Self.TOUR" Multiplicity="*" />
     <ReferentialConstraint>
@@ -246,7 +258,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__TOURDD__IDDD__37A5467C">
+  <Association Name="FK__TOURDD__IDDD__2D27B809">
     <End Role="CTNTQ" Type="Self.CTNTQ" Multiplicity="1" />
     <End Role="TOURDD" Type="Self.TOURDD" Multiplicity="*" />
     <ReferentialConstraint>
@@ -258,7 +270,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__TOURDD__IDT__35BCFE0A">
+  <Association Name="FK__TOURDD__IDT__2B3F6F97">
     <End Role="TOUR" Type="Self.TOUR" Multiplicity="1" />
     <End Role="TOURDD" Type="Self.TOURDD" Multiplicity="*" />
     <ReferentialConstraint>
@@ -285,51 +297,55 @@
     <EntitySet Name="TGTOUR" EntityType="Self.TGTOUR" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TOUR" EntityType="Self.TOUR" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TOURDD" EntityType="Self.TOURDD" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__CTNTQ__IDTT__34C8D9D1" Association="Self.FK__CTNTQ__IDTT__34C8D9D1">
+    <AssociationSet Name="FK__CTNTQ__IDTT__2A4B4B5E" Association="Self.FK__CTNTQ__IDTT__2A4B4B5E">
       <End Role="NOITHAMQUAN" EntitySet="NOITHAMQUAN" />
       <End Role="CTNTQ" EntitySet="CTNTQ" />
     </AssociationSet>
-    <AssociationSet Name="FK__CTTT__IDDDL__38996AB5" Association="Self.FK__CTTT__IDDDL__38996AB5">
+    <AssociationSet Name="FK__CTTT__IDDDL__2E1BDC42" Association="Self.FK__CTTT__IDDDL__2E1BDC42">
       <End Role="DOANDL" EntitySet="DOANDL" />
       <End Role="CTTT" EntitySet="CTTT" />
     </AssociationSet>
-    <AssociationSet Name="FK__CTTT__IDLOAI__398D8EEE" Association="Self.FK__CTTT__IDLOAI__398D8EEE">
+    <AssociationSet Name="FK__CTTT__IDLOAI__2F10007B" Association="Self.FK__CTTT__IDLOAI__2F10007B">
       <End Role="LOAITT" EntitySet="LOAITT" />
       <End Role="CTTT" EntitySet="CTTT" />
     </AssociationSet>
-    <AssociationSet Name="FK__GIATOUR__IDT__36B12243" Association="Self.FK__GIATOUR__IDT__36B12243">
+    <AssociationSet Name="FK__DOANDL__IDT__34C8D9D1" Association="Self.FK__DOANDL__IDT__34C8D9D1">
+      <End Role="TOUR" EntitySet="TOUR" />
+      <End Role="DOANDL" EntitySet="DOANDL" />
+    </AssociationSet>
+    <AssociationSet Name="FK__GIATOUR__IDT__2C3393D0" Association="Self.FK__GIATOUR__IDT__2C3393D0">
       <End Role="TOUR" EntitySet="TOUR" />
       <End Role="GIATOUR" EntitySet="GIATOUR" />
     </AssociationSet>
-    <AssociationSet Name="FK__NVTD__IDDDL__3A81B327" Association="Self.FK__NVTD__IDDDL__3A81B327">
+    <AssociationSet Name="FK__NVTD__IDDDL__300424B4" Association="Self.FK__NVTD__IDDDL__300424B4">
       <End Role="DOANDL" EntitySet="DOANDL" />
       <End Role="NVTD" EntitySet="NVTD" />
     </AssociationSet>
-    <AssociationSet Name="FK__NVTD__IDNV__3C69FB99" Association="Self.FK__NVTD__IDNV__3C69FB99">
+    <AssociationSet Name="FK__NVTD__IDNV__31EC6D26" Association="Self.FK__NVTD__IDNV__31EC6D26">
       <End Role="NHANVIEN" EntitySet="NHANVIEN" />
       <End Role="NVTD" EntitySet="NVTD" />
     </AssociationSet>
-    <AssociationSet Name="FK__NVTD__IDNVU__3B75D760" Association="Self.FK__NVTD__IDNVU__3B75D760">
+    <AssociationSet Name="FK__NVTD__IDNVU__30F848ED" Association="Self.FK__NVTD__IDNVU__30F848ED">
       <End Role="NHIEMVU" EntitySet="NHIEMVU" />
       <End Role="NVTD" EntitySet="NVTD" />
     </AssociationSet>
-    <AssociationSet Name="FK__TGTOUR__IDDDL__3E52440B" Association="Self.FK__TGTOUR__IDDDL__3E52440B">
+    <AssociationSet Name="FK__TGTOUR__IDDDL__33D4B598" Association="Self.FK__TGTOUR__IDDDL__33D4B598">
       <End Role="DOANDL" EntitySet="DOANDL" />
       <End Role="TGTOUR" EntitySet="TGTOUR" />
     </AssociationSet>
-    <AssociationSet Name="FK__TGTOUR__IDKH__3D5E1FD2" Association="Self.FK__TGTOUR__IDKH__3D5E1FD2">
+    <AssociationSet Name="FK__TGTOUR__IDKH__32E0915F" Association="Self.FK__TGTOUR__IDKH__32E0915F">
       <End Role="KH" EntitySet="KH" />
       <End Role="TGTOUR" EntitySet="TGTOUR" />
     </AssociationSet>
-    <AssociationSet Name="FK__TOUR__IDL__33D4B598" Association="Self.FK__TOUR__IDL__33D4B598">
+    <AssociationSet Name="FK__TOUR__IDL__29572725" Association="Self.FK__TOUR__IDL__29572725">
       <End Role="LOAITOUR" EntitySet="LOAITOUR" />
       <End Role="TOUR" EntitySet="TOUR" />
     </AssociationSet>
-    <AssociationSet Name="FK__TOURDD__IDDD__37A5467C" Association="Self.FK__TOURDD__IDDD__37A5467C">
+    <AssociationSet Name="FK__TOURDD__IDDD__2D27B809" Association="Self.FK__TOURDD__IDDD__2D27B809">
       <End Role="CTNTQ" EntitySet="CTNTQ" />
       <End Role="TOURDD" EntitySet="TOURDD" />
     </AssociationSet>
-    <AssociationSet Name="FK__TOURDD__IDT__35BCFE0A" Association="Self.FK__TOURDD__IDT__35BCFE0A">
+    <AssociationSet Name="FK__TOURDD__IDT__2B3F6F97" Association="Self.FK__TOURDD__IDT__2B3F6F97">
       <End Role="TOUR" EntitySet="TOUR" />
       <End Role="TOURDD" EntitySet="TOURDD" />
     </AssociationSet>

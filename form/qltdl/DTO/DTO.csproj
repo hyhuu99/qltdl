@@ -101,12 +101,14 @@
     <Compile Include="TGTOUR.cs">
       <DependentUpon>qltdl.tt</DependentUpon>
     </Compile>
+    <Compile Include="nvmodel.cs" />
     <Compile Include="TOUR.cs">
       <DependentUpon>qltdl.tt</DependentUpon>
     </Compile>
     <Compile Include="TOURDD.cs">
       <DependentUpon>qltdl.tt</DependentUpon>
     </Compile>
+    <Compile Include="tknhanvien.cs" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="qltdl.edmx">
