@@ -11,13 +11,15 @@ namespace DTO
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class CTTT
     {
         public int ID { get; set; }
         public int IDDDL { get; set; }
         public int IDLOAI { get; set; }
         public string NOIDUNG { get; set; }
+        [DataType(DataType.Currency)]
         public Nullable<decimal> THANHTIEN { get; set; }
     
         public virtual DOANDL DOANDL { get; set; }

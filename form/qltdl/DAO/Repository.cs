@@ -7,6 +7,7 @@ using DTO;
 using Microsoft;
 using System.Linq.Expressions;
 using System.Data.Entity;
+using Microsoft.EntityFrameworkCore.Internal;
 
 namespace DAO
 {   
@@ -93,17 +94,32 @@ namespace DAO
             List<nvmodel> lnvm = new List<nvmodel>();
             List<NHANVIEN> lnv = new List<NHANVIEN>();
             lnv = db.NHANVIENs.Where(o => o.ID == manv).ToList();
-            List<NVTD> lnvtd = db.NVTDs.Where(o => o.IDNV == manv && o.DOANDL.NGAYBD >= bd && o.DOANDL.NGAYKT <= kt).ToList();
-            foreach(NVTD nvtd in lnvtd)
+            List<NVTD> lnvtd = db.NVTDs.Where(o => o.IDNV == manv && o.DOANDL.NGAYBD >= bd && o.DOANDL.NGAYKT <= kt)
+                                       .ToList();
+            //lnvtd = lnvtd.GroupBy(o => o.IDDDL).Select(g => g.First()).ToList();
+            //List<int> count = new List<int>();
+            //foreach (NVTD nvtd in lnvtd)
+            //{
+            //    //Select(o => new { o.IDDDL, o.IDNV, o.IDNVU })
+            //    int x = db.NVTDs.Where(o => o.IDNV == manv && o.DOANDL.TOUR.ID==nvtd.DOANDL.TOUR.ID)
+            //      .Select(o => o.DOANDL.TOUR.ID).Count();
+            //    count.Add(x);
+            //}
+            lnvtd = lnvtd.GroupBy(o => o.DOANDL.TOUR.ID).Select(g => g.First()).ToList();
+            foreach (NVTD nvtd in lnvtd)
             {
+
                 nvmodel nvm = new nvmodel();
-                nvm.Tentour = nvtd.DOANDL.TOUR.TENGOI;
-                int count = db.NVTDs.Where(o => o.IDNV == manv && o.IDDDL==nvtd.IDDDL)
-                  .Select(o => o.DOANDL.TOUR.TENGOI).Distinct().Count();
+                nvm.Tentour = nvtd.DOANDL.TOUR.TENGOI;               
                 nvm.Ten = nvtd.NHANVIEN.TENNV;
-                nvm.Sl = count;
+                nvm.Sl = db.NVTDs.Where(o => o.IDNV == manv && o.DOANDL.TOUR.ID == nvtd.DOANDL.TOUR.ID)
+                  //.GroupBy(o => o.DOANDL.TOUR.ID)
+                  .Select(o => o.DOANDL.ID)
+                  .Distinct()
+                  .Count();
                 lnvm.Add(nvm);
             }
+
             return lnvm;
         }
         public List<T> Search(T obj)
