@@ -93,7 +93,7 @@ namespace DAO
             List<nvmodel> lnvm = new List<nvmodel>();
             List<NHANVIEN> lnv = new List<NHANVIEN>();
             lnv = db.NHANVIENs.Where(o => o.ID == manv).ToList();
-            List<NVTD> lnvtd = db.NVTDs.Where(o => o.IDNV == manv && o.DOANDL.NGAYBD > bd && o.DOANDL.NGAYKT < kt).ToList();
+            List<NVTD> lnvtd = db.NVTDs.Where(o => o.IDNV == manv && o.DOANDL.NGAYBD >= bd && o.DOANDL.NGAYKT <= kt).ToList();
             foreach(NVTD nvtd in lnvtd)
             {
                 nvmodel nvm = new nvmodel();

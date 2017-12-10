@@ -12,17 +12,20 @@ namespace BUS
     public class TGTOUR_BUS
     {
         IRepository<TGTOUR> tgtour;
-        IRepository<DOANDL> ddlb;
+        DOANDL_BUS ddb = new DOANDL_BUS();
         IRepository<KH> khb;
+        GIATOUR_BUS gtb = new GIATOUR_BUS();
         public TGTOUR_BUS()
         {
             tgtour = new Repository<TGTOUR>();
-            ddlb = new Repository<DOANDL>();
             khb = new Repository<KH>();
         }
-        public bool insert(TGTOUR nv)
+        public bool insert(TGTOUR tgt)
         {
-            return tgtour.Insert(nv);
+            DOANDL ddl = ddb.searchddl(tgt.IDDDL);
+            ddl.TONGKINHPHI += gtb.search(ddl.IDT).GIATOUR1;
+            ddb.updateddl(ddl);
+            return tgtour.Insert(tgt);
         }
         public List<TGTOUR> getall()
         {
@@ -38,7 +41,7 @@ namespace BUS
         }
         public List<DOANDL> getallddl()
         {
-            return ddlb.GetAll();
+            return ddb.getall();
         }
         public List<KH> getallkh()
         {
@@ -51,6 +54,9 @@ namespace BUS
         }
         public bool delete(TGTOUR tgt)
         {
+            DOANDL ddl = ddb.searchddl(tgt.IDDDL);
+            ddl.TONGKINHPHI -= gtb.search(ddl.IDT).GIATOUR1;
+            ddb.updateddl(ddl);
             return tgtour.Delete(tgt);
         }
     }

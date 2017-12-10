@@ -11,7 +11,8 @@ namespace DTO
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class DOANDL
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -27,6 +28,7 @@ namespace DTO
         public string TENGOI { get; set; }
         public Nullable<System.DateTime> NGAYBD { get; set; }
         public Nullable<System.DateTime> NGAYKT { get; set; }
+        [DataType(DataType.Currency)]
         public Nullable<decimal> TONGKINHPHI { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

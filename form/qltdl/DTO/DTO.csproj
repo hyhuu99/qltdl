@@ -102,6 +102,7 @@
       <DependentUpon>qltdl.tt</DependentUpon>
     </Compile>
     <Compile Include="nvmodel.cs" />
+    <Compile Include="tktour.cs" />
     <Compile Include="TOUR.cs">
       <DependentUpon>qltdl.tt</DependentUpon>
     </Compile>

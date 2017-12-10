@@ -13,7 +13,7 @@ namespace qltdl_web.Controllers
 {
     public class TGTOURsController : Controller
     {
-        private QLTDLEntities db = new QLTDLEntities();
+
         private TGTOUR_BUS tgtb = new TGTOUR_BUS();
         // GET: TGTOURs
         public ActionResult Index()
@@ -124,15 +124,6 @@ namespace qltdl_web.Controllers
             TGTOUR tGTOUR = tgtb.getbyid(id);
             tgtb.delete(tGTOUR);
             return RedirectToAction("Index");
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
         }
     }
 }

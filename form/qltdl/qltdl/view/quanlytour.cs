@@ -37,11 +37,6 @@ namespace qltdl.view
         private void autott()
         {
             NOITHAMQUAN_BUS ntq = new NOITHAMQUAN_BUS();
-            //cbb2.AutoCompleteSource= AutoCompleteSource.CustomSource;
-            //cbb2.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            //AutoCompleteStringCollection col = new AutoCompleteStringCollection();
-            //col.AddRange(ntq.auto().ToArray());
-            //cbb2.AutoCompleteCustomSource = col;
             cbb2.DataSource = ntq.auto();
         }
         private void autodd(String tg)
@@ -271,10 +266,6 @@ namespace qltdl.view
                     qlt.insert(tb1.Text, tb2.Text,idl);
                     int id = qlt.id();
                     gt.insert(id, tb3.Value, dp1.Value, dp2.Value);
-                    Debug.WriteLine(tb3.Value + " test");
-                    
-
-
                     int rowcount = this.dtgtt.Rows.Count;
                     for (int i = 0; i < rowcount; i++)
                     {

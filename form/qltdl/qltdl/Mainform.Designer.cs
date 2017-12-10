@@ -44,13 +44,13 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(2, 5);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(836, 498);
+            this.tabControl1.Size = new System.Drawing.Size(839, 498);
             this.tabControl1.TabIndex = 2;
             // 
             // tabPage1
@@ -81,18 +81,17 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(828, 469);
+            this.tabPage2.Size = new System.Drawing.Size(831, 469);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Thông kê tour";
+            this.tabPage2.Text = "Tình hình tour";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // pntkt
             // 
             this.pntkt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(219)))), ((int)(((byte)(255)))));
-            this.pntkt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pntkt.Location = new System.Drawing.Point(3, 3);
+            this.pntkt.Location = new System.Drawing.Point(3, 0);
             this.pntkt.Name = "pntkt";
-            this.pntkt.Size = new System.Drawing.Size(822, 463);
+            this.pntkt.Size = new System.Drawing.Size(828, 473);
             this.pntkt.TabIndex = 0;
             // 
             // tabPage3

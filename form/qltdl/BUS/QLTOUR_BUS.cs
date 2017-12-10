@@ -74,6 +74,50 @@ namespace BUS
             t.IDL = idl;
             return qltour.Update(t);
         }
+        public List<String> auto()
+        {
+            List<TOUR> lt = qltour.GetAll();
+            List<String> result = new List<String>();
+            foreach (TOUR t in lt)
+            {
+                result.Add(t.TENGOI);
+                //Debug.WriteLine(ntq.TENGOI);
+            }
+            return result;
+        }
+        public List<tktour> thongketour(String tentour)
+        {
+            List<tktour> ltkt = new List<tktour>();
+            TOUR t = new TOUR();
+            List<TOUR> lt = qltour.GetAll();
+            foreach (TOUR temp in lt)
+            {
+                if (temp.TENGOI.Equals(tentour))
+                {
+                    t = temp;break;
+                }
+            }
+            List<DOANDL> ldlt=t.DOANDLs.Where(o => o.NGAYKT < DateTime.Now).ToList();
+            foreach(DOANDL temp in  ldlt)
+            {
+                tktour tkt = new tktour();
+                tkt.Tentour = temp.TOUR.TENGOI;
+                tkt.Tenddl = temp.TENGOI;
+                List<CTTT> lctt = temp.CTTTs.ToList();
+                tkt.Tienloi = temp.TONGKINHPHI.GetValueOrDefault() - loinhuan(lctt);
+                ltkt.Add(tkt);
+            }
+            return ltkt;
+        }
+        private decimal loinhuan(List<CTTT> lctt)
+        {
+            decimal? loinhuan = 0;
+            foreach(CTTT ctt in lctt)
+            {
+                loinhuan += ctt.THANHTIEN;
+            }
+            return loinhuan.GetValueOrDefault();
+        }
     
   
     }

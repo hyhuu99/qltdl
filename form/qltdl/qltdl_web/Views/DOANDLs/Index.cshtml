@@ -44,7 +44,7 @@
             @Html.DisplayFor(modelItem => item.NGAYKT)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.TONGKINHPHI)
+            @Html.DisplayFor(modelItem => item.TONGKINHPHI, "Currency")
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
