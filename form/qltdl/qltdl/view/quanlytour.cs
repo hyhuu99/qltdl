@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS;
-using viewmodel;
+using DTO;
 using System.Diagnostics;
 
 namespace qltdl.view

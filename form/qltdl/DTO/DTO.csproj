@@ -55,6 +55,7 @@
     <Compile Include="CTTT.cs">
       <DependentUpon>qltdl.tt</DependentUpon>
     </Compile>
+    <Compile Include="ddview.cs" />
     <Compile Include="DOANDL.cs">
       <DependentUpon>qltdl.tt</DependentUpon>
     </Compile>
@@ -110,6 +111,7 @@
       <DependentUpon>qltdl.tt</DependentUpon>
     </Compile>
     <Compile Include="tknhanvien.cs" />
+    <Compile Include="tourview.cs" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="qltdl.edmx">

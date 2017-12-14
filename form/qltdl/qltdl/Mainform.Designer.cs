@@ -34,7 +34,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.pntkt = new System.Windows.Forms.Panel();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.pngt = new System.Windows.Forms.Panel();
+            this.pntkcp = new System.Windows.Forms.Panel();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -61,7 +61,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(828, 469);
+            this.tabPage1.Size = new System.Drawing.Size(831, 469);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Quản lý tour";
             // 
@@ -71,7 +71,7 @@
             this.pnqlt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnqlt.Location = new System.Drawing.Point(3, 3);
             this.pnqlt.Name = "pnqlt";
-            this.pnqlt.Size = new System.Drawing.Size(822, 463);
+            this.pnqlt.Size = new System.Drawing.Size(825, 463);
             this.pnqlt.TabIndex = 1;
             // 
             // tabPage2
@@ -96,23 +96,22 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.pngt);
+            this.tabPage3.Controls.Add(this.pntkcp);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(828, 469);
+            this.tabPage3.Size = new System.Drawing.Size(831, 469);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Giá tour";
+            this.tabPage3.Text = "Thống kê chi phí";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // pngt
+            // pntkcp
             // 
-            this.pngt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(219)))), ((int)(((byte)(255)))));
-            this.pngt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pngt.Location = new System.Drawing.Point(3, 3);
-            this.pngt.Name = "pngt";
-            this.pngt.Size = new System.Drawing.Size(822, 463);
-            this.pngt.TabIndex = 1;
+            this.pntkcp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(219)))), ((int)(((byte)(255)))));
+            this.pntkcp.Location = new System.Drawing.Point(3, 0);
+            this.pntkcp.Name = "pntkcp";
+            this.pntkcp.Size = new System.Drawing.Size(828, 473);
+            this.pntkcp.TabIndex = 1;
             // 
             // Mainform
             // 
@@ -139,7 +138,7 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Panel pntkt;
-        private System.Windows.Forms.Panel pngt;
+        private System.Windows.Forms.Panel pntkcp;
     }
 }
 

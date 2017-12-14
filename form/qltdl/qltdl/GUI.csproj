@@ -66,6 +66,12 @@
     <Compile Include="view\quanlytour.Designer.cs">
       <DependentUpon>quanlytour.cs</DependentUpon>
     </Compile>
+    <Compile Include="view\thongkechiphi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="view\thongkechiphi.Designer.cs">
+      <DependentUpon>thongkechiphi.cs</DependentUpon>
+    </Compile>
     <Compile Include="view\thongketour.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -86,6 +92,9 @@
     </Compile>
     <EmbeddedResource Include="view\quanlytour.resx">
       <DependentUpon>quanlytour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\thongkechiphi.resx">
+      <DependentUpon>thongkechiphi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\thongketour.resx">
       <DependentUpon>thongketour.cs</DependentUpon>
@@ -112,10 +121,6 @@
     <ProjectReference Include="..\DTO\DTO.csproj">
       <Project>{4af9a138-d8ae-4fe2-b007-14ea3f76f62f}</Project>
       <Name>DTO</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\viewmodel\viewmodel.csproj">
-      <Project>{3a10600a-f041-4f0b-b6aa-09cf695960ba}</Project>
-      <Name>viewmodel</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -20,13 +20,17 @@ namespace qltdl
             dockview();
         }
         thongketour tkt = new thongketour();
+        thongkechiphi tkcp = new thongkechiphi();
         quanlytour qlt=new quanlytour();
         //dockview
         private void dockview()
         {
             pnqlt.Controls.Add(qlt);
             pntkt.Controls.Add(tkt);
+            pntkcp.Controls.Add(tkcp);
             qlt.Dock = DockStyle.Fill;
+            tkt.Dock = DockStyle.Fill;
+            tkcp.Dock = DockStyle.Fill;
         }
         private void tktbt_Click(object sender, EventArgs e)
         {
