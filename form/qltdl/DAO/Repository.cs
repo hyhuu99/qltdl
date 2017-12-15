@@ -113,7 +113,6 @@ namespace DAO
                 nvm.Tentour = nvtd.DOANDL.TOUR.TENGOI;               
                 nvm.Ten = nvtd.NHANVIEN.TENNV;
                 nvm.Sl = db.NVTDs.Where(o => o.IDNV == manv && o.DOANDL.TOUR.ID == nvtd.DOANDL.TOUR.ID)
-                  //.GroupBy(o => o.DOANDL.TOUR.ID)
                   .Select(o => o.DOANDL.ID)
                   .Distinct()
                   .Count();

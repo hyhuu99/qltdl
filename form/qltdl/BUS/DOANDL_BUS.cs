@@ -41,6 +41,11 @@ namespace BUS
         {
             return doandl.Update(dl);
         }
+        public List<DOANDL> listddl(int idtour)
+        {
+            return doandl.GetAll().Where(c => idtour == c.TOUR.ID).ToList();
+            
+        }
        
     }
 }

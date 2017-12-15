@@ -103,6 +103,7 @@
       <DependentUpon>qltdl.tt</DependentUpon>
     </Compile>
     <Compile Include="nvmodel.cs" />
+    <Compile Include="tkcttt.cs" />
     <Compile Include="tktour.cs" />
     <Compile Include="TOUR.cs">
       <DependentUpon>qltdl.tt</DependentUpon>
@@ -111,6 +112,7 @@
       <DependentUpon>qltdl.tt</DependentUpon>
     </Compile>
     <Compile Include="tknhanvien.cs" />
+    <Compile Include="tkchiphi.cs" />
     <Compile Include="tourview.cs" />
   </ItemGroup>
   <ItemGroup>

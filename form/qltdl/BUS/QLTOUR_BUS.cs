@@ -117,6 +117,10 @@ namespace BUS
             }
             return loinhuan.GetValueOrDefault();
         }
+        public TOUR getbyid(int? id)
+        {
+            return qltour.GetById(id);
+        }
     
   
     }

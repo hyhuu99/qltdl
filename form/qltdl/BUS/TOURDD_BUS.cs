@@ -64,7 +64,6 @@ namespace BUS
                 ddview temp = new ddview();
                 temp.tinhthanh = tdd.CTNTQ.NOITHAMQUAN.TENGOI;
                 temp.diadiem = tdd.CTNTQ.TENGOI;
-                Debug.WriteLine(tdd.CTNTQ.NOITHAMQUAN.TENGOI);
                 lddv.Add(temp);
             }
             return lddv;
