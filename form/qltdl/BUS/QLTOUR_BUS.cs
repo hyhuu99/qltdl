@@ -103,6 +103,8 @@ namespace BUS
                 tkt.Tentour = temp.TOUR.TENGOI;
                 tkt.Tenddl = temp.TENGOI;
                 List<CTTT> lctt = temp.CTTTs.ToList();
+                tkt.Tongkinhphi = temp.TONGKINHPHI.GetValueOrDefault();
+                tkt.Doanhthu = loinhuan(lctt);
                 tkt.Tienloi = temp.TONGKINHPHI.GetValueOrDefault() - loinhuan(lctt);
                 ltkt.Add(tkt);
             }

@@ -12,7 +12,6 @@ namespace qltdl_web.Controllers
 {
     public class DOANDLsController : Controller
     {
-        private QLTDLEntities db = new QLTDLEntities();
         private DOANDL_BUS ddl = new DOANDL_BUS();
         // GET: DOANDLs
         public ActionResult Index()
@@ -121,13 +120,6 @@ namespace qltdl_web.Controllers
         //    return RedirectToAction("Index");
         //}
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+       
     }
 }

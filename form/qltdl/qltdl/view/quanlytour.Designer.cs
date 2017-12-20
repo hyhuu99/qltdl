@@ -34,6 +34,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tbid = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cbb4 = new System.Windows.Forms.ComboBox();
             this.qlbt2 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.dp2 = new System.Windows.Forms.DateTimePicker();
@@ -64,7 +65,6 @@
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cbb4 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tb3)).BeginInit();
@@ -122,6 +122,15 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(261, 408);
             this.panel2.TabIndex = 7;
+            // 
+            // cbb4
+            // 
+            this.cbb4.FormattingEnabled = true;
+            this.cbb4.Location = new System.Drawing.Point(110, 97);
+            this.cbb4.Margin = new System.Windows.Forms.Padding(4);
+            this.cbb4.Name = "cbb4";
+            this.cbb4.Size = new System.Drawing.Size(151, 24);
+            this.cbb4.TabIndex = 30;
             // 
             // qlbt2
             // 
@@ -405,6 +414,7 @@
             this.dtgt.Location = new System.Drawing.Point(4, 54);
             this.dtgt.Margin = new System.Windows.Forms.Padding(4);
             this.dtgt.Name = "dtgt";
+            this.dtgt.ReadOnly = true;
             this.dtgt.Size = new System.Drawing.Size(545, 404);
             this.dtgt.TabIndex = 5;
             this.dtgt.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgt_CellClick);
@@ -414,6 +424,7 @@
             this.Column7.DataPropertyName = "tengoi";
             this.Column7.HeaderText = "Tên gọi";
             this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
             this.Column7.Width = 150;
             // 
             // Column8
@@ -421,6 +432,7 @@
             this.Column8.DataPropertyName = "dacdiem";
             this.Column8.HeaderText = "Đặc điểm";
             this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
             // 
             // Column9
             // 
@@ -430,6 +442,7 @@
             this.Column9.DefaultCellStyle = dataGridViewCellStyle3;
             this.Column9.HeaderText = "Giá tour";
             this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
             this.Column9.Width = 125;
             // 
             // Column10
@@ -437,6 +450,7 @@
             this.Column10.DataPropertyName = "loai";
             this.Column10.HeaderText = "Loại";
             this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
             this.Column10.Width = 120;
             // 
             // Column1
@@ -444,21 +458,14 @@
             this.Column1.DataPropertyName = "ngaybd";
             this.Column1.HeaderText = "Ngày bắt đầu";
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
             this.Column2.DataPropertyName = "ngaykt";
             this.Column2.HeaderText = "Ngày kết thúc";
             this.Column2.Name = "Column2";
-            // 
-            // cbb4
-            // 
-            this.cbb4.FormattingEnabled = true;
-            this.cbb4.Location = new System.Drawing.Point(110, 97);
-            this.cbb4.Margin = new System.Windows.Forms.Padding(4);
-            this.cbb4.Name = "cbb4";
-            this.cbb4.Size = new System.Drawing.Size(151, 24);
-            this.cbb4.TabIndex = 30;
+            this.Column2.ReadOnly = true;
             // 
             // quanlytour
             // 

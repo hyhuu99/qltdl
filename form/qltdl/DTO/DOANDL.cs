@@ -26,9 +26,13 @@ namespace DTO
         public int ID { get; set; }
         public int IDT { get; set; }
         public string TENGOI { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> NGAYBD { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> NGAYKT { get; set; }
-        [DataType(DataType.Currency)]
+        [DisplayFormat(DataFormatString = "{0:N0}")]
         public Nullable<decimal> TONGKINHPHI { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

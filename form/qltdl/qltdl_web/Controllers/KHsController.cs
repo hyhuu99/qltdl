@@ -14,7 +14,6 @@ namespace qltdl_web.Controllers
 {
     public class KHsController : Controller
     {
-        private QLTDLEntities db = new QLTDLEntities();
         private KH_BUS khb = new KH_BUS();
         // GET: KHs
         public ActionResult Index()
@@ -91,8 +90,7 @@ namespace qltdl_web.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(kH).State = EntityState.Modified;
-                db.SaveChanges();
+                khb.update(kH);
                 return RedirectToAction("Index");
             }
             return View(kH);
@@ -123,14 +121,5 @@ namespace qltdl_web.Controllers
         //    db.SaveChanges();
         //    return RedirectToAction("Index");
         //}
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
     }
 }

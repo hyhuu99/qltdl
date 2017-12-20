@@ -19,7 +19,7 @@ namespace DTO
         public int IDDDL { get; set; }
         public int IDLOAI { get; set; }
         public string NOIDUNG { get; set; }
-        [DataType(DataType.Currency)]
+        [DisplayFormat(DataFormatString = "{0:N0}")]
         public Nullable<decimal> THANHTIEN { get; set; }
     
         public virtual DOANDL DOANDL { get; set; }

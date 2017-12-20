@@ -13,7 +13,7 @@ namespace qltdl_web.Controllers
 {
     public class CTTTsController : Controller
     {
-        private QLTDLEntities db = new QLTDLEntities();
+
         private CTTT_BUS ctb = new CTTT_BUS();
         // GET: CTTTs
         public ActionResult Index()
@@ -54,8 +54,8 @@ namespace qltdl_web.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.CTTTs.Add(cTTT);
-                db.SaveChanges();
+                ctb.insert(cTTT);
+    
                 return RedirectToAction("Index");
             }
 
@@ -90,8 +90,7 @@ namespace qltdl_web.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(cTTT).State = EntityState.Modified;
-                db.SaveChanges();
+                ctb.update(cTTT);
                 return RedirectToAction("Index");
             }
             ViewBag.IDDDL = new SelectList(ctb.getallddl(), "ID", "TENGOI", cTTT.IDDDL);
@@ -100,13 +99,6 @@ namespace qltdl_web.Controllers
         }
 
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+       
     }
 }
