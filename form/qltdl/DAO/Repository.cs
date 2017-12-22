@@ -78,12 +78,6 @@ namespace DAO
             }
             return ok;
         }
-
-        public bool Exists(T obj)
-        {
-            return db.Set<T>().Any();
-        }
-
         public List<T> Search(Expression<Func<T, bool>> where)
         {    
             
@@ -96,15 +90,6 @@ namespace DAO
             lnv = db.NHANVIENs.Where(o => o.ID == manv).ToList();
             List<NVTD> lnvtd = db.NVTDs.Where(o => o.IDNV == manv && o.DOANDL.NGAYBD >= bd && o.DOANDL.NGAYKT <= kt)
                                        .ToList();
-            //lnvtd = lnvtd.GroupBy(o => o.IDDDL).Select(g => g.First()).ToList();
-            //List<int> count = new List<int>();
-            //foreach (NVTD nvtd in lnvtd)
-            //{
-            //    //Select(o => new { o.IDDDL, o.IDNV, o.IDNVU })
-            //    int x = db.NVTDs.Where(o => o.IDNV == manv && o.DOANDL.TOUR.ID==nvtd.DOANDL.TOUR.ID)
-            //      .Select(o => o.DOANDL.TOUR.ID).Count();
-            //    count.Add(x);
-            //}
             lnvtd = lnvtd.GroupBy(o => o.DOANDL.TOUR.ID).Select(g => g.First()).ToList();
             foreach (NVTD nvtd in lnvtd)
             {
@@ -112,7 +97,7 @@ namespace DAO
                 nvmodel nvm = new nvmodel();
                 nvm.Tentour = nvtd.DOANDL.TOUR.TENGOI;               
                 nvm.Ten = nvtd.NHANVIEN.TENNV;
-                nvm.Sl = db.NVTDs.Where(o => o.IDNV == manv && o.DOANDL.TOUR.ID == nvtd.DOANDL.TOUR.ID)
+                nvm.Sl = db.NVTDs.Where(o => o.IDNV == manv && o.DOANDL.TOUR.ID == nvtd.DOANDL.TOUR.ID && o.DOANDL.NGAYBD>=bd && o.DOANDL.NGAYKT<=kt)
                   .Select(o => o.DOANDL.ID)
                   .Distinct()
                   .Count();
@@ -120,10 +105,6 @@ namespace DAO
             }
 
             return lnvm;
-        }
-        public List<T> Search(T obj)
-        {
-            throw new NotImplementedException();
         }
 
         protected virtual void Dispose(bool disposing)

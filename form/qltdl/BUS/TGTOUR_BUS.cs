@@ -22,10 +22,21 @@ namespace BUS
         }
         public bool insert(TGTOUR tgt)
         {
-            DOANDL ddl = ddb.searchddl(tgt.IDDDL);
-            ddl.TONGKINHPHI += gtb.search(ddl.IDT).GIATOUR1;
-            ddb.updateddl(ddl);
-            return tgtour.Insert(tgt);
+            if(exist_kh(tgt))
+            {
+                DOANDL ddl = ddb.searchddl(tgt.IDDDL);
+                ddl.TONGKINHPHI += gtb.search(ddl.IDT).GIATOUR1;
+                ddb.updateddl(ddl);
+                return tgtour.Insert(tgt);              
+            }
+            return false;
+        }
+        public bool exist_kh(TGTOUR tgt)
+        {
+            List<TGTOUR> ltgs = tgtour.GetAll().Where(c => c.IDKH==tgt.IDKH && c.IDDDL==tgt.IDDDL).ToList();
+            if (!ltgs.Any())
+                return true;
+            return false;
         }
         public List<TGTOUR> getall()
         {

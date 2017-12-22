@@ -26,10 +26,6 @@ namespace BUS
         //    ltt.TENLOAI = ten;
         //    return lt.Insert(ltt);
         //}
-        public List<LOAITOUR> search(LOAITOUR t)
-        {
-            return lt.Search(t);
-        }
         public List<String> auto()
         {
             List<LOAITOUR> ltt = lt.GetAll();

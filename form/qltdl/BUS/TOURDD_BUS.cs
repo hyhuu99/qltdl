@@ -32,10 +32,6 @@ namespace BUS
         {
             return tourdd.Update(t);
         }
-        public List<TOURDD> search(TOURDD t)
-        {           
-            return tourdd.Search(t);
-        }
         //public int iddd(String name)
         //{
         //    TOURDD ct = new TOURDD();

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,9 +15,8 @@ namespace DAO
         T GetById(int? id);
         bool Insert(T obj);
         bool Delete(T obj);
-        bool Update(T obj);
-        bool Exists(T obj);
-        List<T> Search(T obj);
+        bool Update(T obj);      
+        List<T> Search(Expression<Func<T, bool>> where);
         List<nvmodel> tknhanvien(int manv, DateTime bd, DateTime kt);
 
 

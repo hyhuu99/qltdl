@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using DTO;
 using BUS;
+using System.Diagnostics;
 
 namespace qltdl_web.Controllers
 {
@@ -54,7 +55,7 @@ namespace qltdl_web.Controllers
         {
             if (ModelState.IsValid)
             {
-                tgtb.insert(tGTOUR);
+                bool success= tgtb.insert(tGTOUR);               
                 return RedirectToAction("Index");
             }
 

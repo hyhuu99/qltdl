@@ -33,10 +33,6 @@ namespace BUS
         {
             return qltour.Update(t);
         }
-        public List<TOUR> search(TOUR t)
-        {           
-            return qltour.Search(t);
-        }
         public int id()
         {
             return qltour.GetAll().Max(c => c.ID);

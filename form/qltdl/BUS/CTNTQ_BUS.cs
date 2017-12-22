@@ -28,10 +28,7 @@ namespace BUS
         {
             return ctntq.Update(t);
         }
-        public List<CTNTQ> search(CTNTQ t)
-        {
-            return ctntq.Search(t);
-        }
+
         
         public List<String> auto(String tg)
         {

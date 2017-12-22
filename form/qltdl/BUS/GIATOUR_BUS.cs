@@ -32,10 +32,6 @@ namespace BUS
         {
             return gt.Update(t);
         }
-        public List<GIATOUR> search(GIATOUR t)
-        {           
-            return gt.Search(t);
-        }
         public GIATOUR search(int id)
         {
             return gt.GetAll().OrderByDescending(c => c.NGAYBD).First(c => c.IDT == id);

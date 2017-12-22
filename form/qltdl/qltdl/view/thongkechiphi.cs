@@ -63,7 +63,6 @@ namespace qltdl.view
                 MessageBox.Show("Không có dữ liệu", "Thông báo", MessageBoxButtons.OK);
 
         }
-
         private void bttk_Click(object sender, EventArgs e)
         {
             try
@@ -87,7 +86,7 @@ namespace qltdl.view
         {
             try
             {
-                int idddl= idt = int.Parse(this.dtddl.CurrentRow.Cells[3].Value.ToString());
+                int idddl= int.Parse(this.dtddl.CurrentRow.Cells[3].Value.ToString());
                 loadcttt(idddl);
             }
             catch (Exception ex)

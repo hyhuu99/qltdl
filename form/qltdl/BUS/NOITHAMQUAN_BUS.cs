@@ -28,10 +28,6 @@ namespace BUS
         {
             return ntq.Update(t);
         }
-        public List<NOITHAMQUAN> search(NOITHAMQUAN t)
-        {
-            return ntq.Search(t);
-        }
         public List<String> auto()
         {
             List<NOITHAMQUAN> lntq = ntq.GetAll();

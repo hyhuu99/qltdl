@@ -24,7 +24,10 @@ namespace BUS
         }
         public bool insert(NVTD nv)
         {
-            return nvtd.Insert(nv);
+            if (exist_nv(nv))
+                return nvtd.Insert(nv);
+            else
+                return false;
         }
         public List<NVTD> getall()
         {
@@ -41,6 +44,13 @@ namespace BUS
         public List<DOANDL> getddl()
         {
             return ddlb.GetAll();
+        }
+        public bool exist_nv(NVTD nv)
+        {
+            NVTD nvtds= nvtd.GetAll().FirstOrDefault(c => c.IDNV==nv.IDNV && c.IDDDL==nv.IDDDL && c.IDNVU==nv.IDNVU);
+            if (nvtds == null)
+                return true;
+            return false;
         }
         public List<NHANVIEN> getnv()
         {
